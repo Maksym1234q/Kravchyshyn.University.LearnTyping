@@ -9,7 +9,8 @@ function signIn() {
 
     let params = {
         "client_id": "89192876707-q61vsvn6utggb1v0qkt870gcg6h9mjl7.apps.googleusercontent.com",
-        "redirect_uri": "http://127.0.0.1:5500/profile.html",
+        "redirect_uri": "http://localhost:3000/profile.html",
+        // "redirect_uri": "/profile",
         "response_type": "token",
         "scope": "https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/youtube.readonly",
         "include_granted_scopes": 'true',

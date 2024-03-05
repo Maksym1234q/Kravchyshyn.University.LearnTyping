@@ -9,18 +9,18 @@
 <body>
     <div class="container">
         <nav>
-            <h1 style="color: aliceblue;">TypingClub</h1>
+            <h1 style="color: aliceblue;">Typing Club</h1>
             <ul>
                 <li id="registerButton"><a href="register.html">Register</a></li>
-                <li id="logoutButton" style="display: none;"><button onclick="logout()">Logout</button></li>
+                <li id="logoutButton" ><button onclick="logout()">Logout</button></li>
+                
             </ul>
         </nav>
         <div class="content">
             <img class="moon" src=".//img/moon.png" alt="#moon">
             <div class="blok">
                 <h1>
-                    Learn Touch Typing
-                    <span id="text"> for free!</span>
+                    Learn Touch Typing for free!
                     <i class="cursor"></i>
                 </h1>
                 <button class="btn" type="button" >Get started</button>
@@ -34,25 +34,65 @@
     </div>
     <div class="container2"></div>
 
-    <script>
-        // Перевірка статусу реєстрації
-        function checkRegistrationStatus() {
-            const isRegistered = localStorage.getItem('isRegistered');
-            return isRegistered === 'true';
+
+<script>
+        // // Перевірка статусу реєстрації
+        // function checkRegistrationStatus() {
+        //     const isRegistered = localStorage.getItem('isRegistered');
+        //     return isRegistered === 'true';
+        // }
+
+        // // Зміна тексту кнопки в залежності від статусу реєстрації
+        // window.onload = function () {
+        //     const isRegistered = checkRegistrationStatus();
+        //     const registerButton = document.getElementById('registerButton');
+        //     const logoutButton = document.getElementById('logoutButton');
+
+        //     if (isRegistered) {
+        //         registerButton.innerHTML = '<a href="profile.html"> Your profile </a>'; 
+        //         logoutButton.innerHTML = '<button onclick="logout()">Logout</button></li>';
+        //     } 
+        // };
+        
+  // Перевірка статусу реєстрації
+  function checkRegistrationStatus() {
+        const isRegistered = localStorage.getItem('isRegistered');
+        return isRegistered === 'true';
+    }
+
+    // Вихід з акаунта
+    function logout() {
+        localStorage.removeItem('isRegistered');
+        localStorage.removeItem('authInfo'); // Видалення authInfo з localStorage
+        updateRegisterButton(); // Оновлення кнопки реєстрації на головній сторінці
+        location.href = "/index.html"; // Перенаправлення на index.html
+    }
+
+    // Функція оновлення кнопки реєстрації на головній сторінці
+    function updateRegisterButton() {
+        const isRegistered = localStorage.getItem('isRegistered');
+        const registerButton = document.getElementById('registerButton');
+        const logoutButton = document.getElementById('logoutButton');
+        
+        if (isRegistered === 'true') {
+            registerButton.innerHTML = '<a href="/profile.html"> Your profile </a>';
+            // Показуємо кнопку логауту, якщо користувач зареєстрований
+            logoutButton.classList.remove('hidden');
+        } else {
+            registerButton.innerHTML = '<a href="/register.html">Register</a>';
+            registerButton.onclick = function() {
+                localStorage.setItem('isRegistered', 'false'); // При кліку на кнопку реєстрації, зберігаємо в localStorage, що користувач ще не зареєстрований
+                // Додаткова логіка, якщо необхідно
+            };
+            // Приховуємо кнопку логауту, якщо користувач не зареєстрований
+            logoutButton.classList.add('hidden');
         }
+    }
 
-        // Зміна тексту кнопки в залежності від статусу реєстрації
-        window.onload = function () {
-            const isRegistered = checkRegistrationStatus();
-            const registerButton = document.getElementById('registerButton');
-            const logoutButton = document.getElementById('logoutButton');
-
-            if (isRegistered) {
-                registerButton.innerHTML = '<a href="profile.html"> Ваш профіль </a>'; 
-            } 
-        };
-
-      
-    </script>
+    // Оновлення кнопки реєстрації при завантаженні сторінки
+    window.onload = function() {
+        updateRegisterButton();
+    }; 
+</script>
 </body>
 </html>

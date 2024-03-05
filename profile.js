@@ -1,4 +1,4 @@
-
+       
 let params = {}
 
 let regex = /([^&=]+)=([^&]*)/g, m
@@ -33,6 +33,9 @@ fetch("https://www.googleapis.com/oauth2/v3/userinfo", {
 })
 
 
+
+
+
 function goToIndex() {
         window.location.href = 'index.html';
     }
@@ -40,7 +43,7 @@ function goToIndex() {
     function logout() {
     localStorage.removeItem('isRegistered');
 
-fetch("https://oauth2.googleapis.com/revoke?token=" + info['access_token'], {
+    fetch("https://oauth2.googleapis.com/revoke?token=" + info['access_token'], {
         method: 'POST',
         headers: {
             "Content-type": "application/x-www-form-urlencoded"
@@ -53,7 +56,7 @@ fetch("https://oauth2.googleapis.com/revoke?token=" + info['access_token'], {
         // Successful token revocation
         localStorage.removeItem('authInfo'); // Remove authInfo from localStorage
         updateRegisterButton(); // Update the register button on the main page
-        location.href = "http://localhost:5500/index.html"; // Redirect to index.html
+        location.href = "http://localhost:30000/index.html"; // Redirect to index.html
     })
     .catch(error => {
         console.error('Error revoking token:', error);
@@ -68,9 +71,9 @@ const isRegistered = localStorage.getItem('isRegistered');
 const registerButton = document.getElementById('registerButton');
 
 if (isRegistered === 'true') {
-    registerButton.innerHTML = '<a href="profile.html"> Ваш профіль </a>';
+    registerButton.innerHTML = '<a href="/profile"> Ваш профіль </a>';
 } else {
-    registerButton.innerHTML = '<a href="register.html">Register</a>';
+    registerButton.innerHTML = '<a href="/register">Register</a>';
 }
 }
 

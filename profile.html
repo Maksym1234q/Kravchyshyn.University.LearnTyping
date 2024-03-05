@@ -4,25 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style_profile.css">
-    <script src="profile.js"></script>
     <title>User profile</title>
 </head>
 <body>
     <h1>Welcom profile</h1>
-    <!-- <h2 id="name"> your fuul name : </h2>
-    <img id="image"/> -->
+ 
 
     <div class="profile-info">
         <img id="image"/>
         <div class="user-details">
             <h2 id="name"> Name: </h2>
            
-            <!-- Додайте інші дані про користувача, які ви хочете відобразити -->
         </div>
     </div>
     
     <button onclick="logout()"> logout </button>
     <button onclick="goToIndex()">Повернутися на головну</button>
+    <script src="profile.js"></script>
+
+    <script>
+
+// function goToIndex() {
+//     window.location.href = 'index.html';
+// }
+
+// function logout() {
+//     localStorage.removeItem('authInfo');
+
+//     fetch("https://oauth2.googleapis.com/revoke?token=" + info['access_token'], {
+//         method: 'POST',
+//         headers: {
+//             "Content-type": "application/x-www-form-urlencoded"
+//         }
+//     })
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error('Failed to revoke token');
+//         }
+//         // Successful token revocation
+//         localStorage.removeItem('authInfo'); // Remove authInfo from localStorage
+//         updateRegisterButton(); // Update the register button on the main page
+//         location.href = "http://localhost:5500/index.html"; // Redirect to index.html
+//     })
+//     .catch(error => {
+//         console.error('Error revoking token:', error);
+//         // Handle error as needed, e.g., show an error message to the user
+//     });
+// }
+
+// // Function to update the register button on the main page
+// function updateRegisterButton() {
+//     const isRegistered = localStorage.getItem('isRegistered');
+//     const registerButton = document.getElementById('registerButton');
+
+//     if (isRegistered === 'true') {
+//         registerButton.innerHTML = '<a href="profile.html"> Ваш профіль </a>';
+//     } else {
+//         registerButton.innerHTML = '<a href="register.html">Register</a>';
+//     }
+// }
+
+// // Update the register button when the page loads
+// window.onload = function() {
+//     updateRegisterButton();
+// };
+
+
  
+    </script>
 </body>
 </html>

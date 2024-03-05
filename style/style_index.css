@@ -55,6 +55,22 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
+nav ul li button {
+    
+    color: #084f8e;
+    width: 100px;
+    height: 35px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+
 .cursor {
     display: inline-block;
     width: 2px;
@@ -147,7 +163,7 @@ nav ul li a:hover::after {
     height: 50px;
     padding: 10px 20px;
     font-size: 16px;
-    font-weight: 100;
+    font-weight: 600;
     letter-spacing: 2px;
     text-decoration: none;
     background-color: rgb(255, 255, 255);
@@ -238,4 +254,9 @@ nav ul li a:hover::after {
     
    
     
+}
+
+
+.hidden {
+    display: none;
 }
