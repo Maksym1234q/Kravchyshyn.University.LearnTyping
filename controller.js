@@ -1,3 +1,4 @@
+//controller.js
 import bcrypt from 'bcrypt';
 import { createHash } from 'crypto';
 import { validationResult, matchedData } from 'express-validator';

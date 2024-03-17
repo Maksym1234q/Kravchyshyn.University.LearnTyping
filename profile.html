@@ -11,7 +11,8 @@
  
 
     <div class="profile-info">
-        <img id="image"/>
+        <img id="image" src="#" alt="Avatar" />
+        <!-- <img id="image"/> -->
         <div class="user-details">
             <h2 id="name"> Name: </h2>
            
@@ -19,58 +20,78 @@
     </div>
     
     <button onclick="logout()"> logout </button>
-    <button onclick="goToIndex()">Повернутися на головну</button>
-    <script src="profile.js"></script>
+    <button onclick="goToIndex()">Home</button>
 
     <script>
+let params = {}
 
-// function goToIndex() {
-//     window.location.href = 'index.html';
-// }
+let regex = /([^&=]+)=([^&]*)/g, m
 
-// function logout() {
-//     localStorage.removeItem('authInfo');
+while(m = regex.exec(location.href)){
+    params[decodeURIComponent(m[1])] = decodeURIComponent(m[2])
+}
 
-//     fetch("https://oauth2.googleapis.com/revoke?token=" + info['access_token'], {
-//         method: 'POST',
-//         headers: {
-//             "Content-type": "application/x-www-form-urlencoded"
-//         }
-//     })
-//     .then(response => {
-//         if (!response.ok) {
-//             throw new Error('Failed to revoke token');
-//         }
-//         // Successful token revocation
-//         localStorage.removeItem('authInfo'); // Remove authInfo from localStorage
-//         updateRegisterButton(); // Update the register button on the main page
-//         location.href = "http://localhost:5500/index.html"; // Redirect to index.html
-//     })
-//     .catch(error => {
-//         console.error('Error revoking token:', error);
-//         // Handle error as needed, e.g., show an error message to the user
-//     });
-// }
+if(Object.keys(params).length > 0){
+    localStorage.setItem('authInfo', JSON.stringify(params))
+}
 
-// // Function to update the register button on the main page
-// function updateRegisterButton() {
-//     const isRegistered = localStorage.getItem('isRegistered');
-//     const registerButton = document.getElementById('registerButton');
+//................................
 
-//     if (isRegistered === 'true') {
-//         registerButton.innerHTML = '<a href="profile.html"> Ваш профіль </a>';
-//     } else {
-//         registerButton.innerHTML = '<a href="register.html">Register</a>';
-//     }
-// }
+window.history.pushState({},document.title, "/" + "profile.html")
 
-// // Update the register button when the page loads
-// window.onload = function() {
-//     updateRegisterButton();
-// };
+let info = JSON.parse(localStorage.getItem('authInfo'))
+console.log(JSON.parse(localStorage.getItem('authInfo')))
+console.log(info['access_token'])
+console.log(info['expires_in'])
 
+fetch("https://www.googleapis.com/oauth2/v3/userinfo", {
+    headers:{
+        "Authorization":`Bearer ${info['access_token']}`
+    }
+})
+.then((data) => data.json())
+.then((info) => {
+    console.log(info)
+    document.getElementById('name').innerHTML += info.name
+    document.getElementById('image').setAttribute('src', info.picture)
+})
 
+    function goToIndex() {
+        window.location.href = 'index.html';
+    }
+
+    function logout() {
+    localStorage.removeItem('isRegistered');
+
+    fetch("https://oauth2.googleapis.com/revoke?token=" + info['access_token'], {
+        method: 'POST',
+        headers: {
+            "Content-type": "application/x-www-form-urlencoded"
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to revoke token');
+        }
+        // Successful token revocation
+        localStorage.removeItem('authInfo'); // Remove authInfo from localStorage
+        location.href = "http://localhost:30000/index.html"; // Redirect to index.html
+    })
+    .catch(error => {
+        console.error('Error revoking token:', error);
+        // Handle error as needed, e.g., show an error message to the user
+    });
+    window.location.href = 'index.html';
+}
+
+// Update the register button when the page loads
+window.onload = function() {
+};
  
     </script>
 </body>
 </html>
+
+
+
+

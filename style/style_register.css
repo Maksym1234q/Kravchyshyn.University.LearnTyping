@@ -88,7 +88,7 @@ body {
 
 .btn:hover, .btn:active, .btn:focus {
     background: rgb(255, 255, 255) !important;
-    box-shadow: 0 0 10px #b5fb98;
+    box-shadow: 0 0 10px #b298fb;
     color: black !important;
 }
 
@@ -113,7 +113,7 @@ body {
 
 .btn-google:hover, .btn-google:active, .btn-google:focus {
     background: rgb(255, 255, 255) !important;
-    box-shadow: 0 0 10px #b5fb98;
+    box-shadow: 0 0 10px #b298fb;
     color: black !important;
     font-weight: 600;
 }

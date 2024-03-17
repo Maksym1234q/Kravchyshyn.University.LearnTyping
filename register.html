@@ -1,4 +1,4 @@
-<!-- registration.html -->
+<!-- register.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,44 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style_register.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
     <title>Registration</title>
 </head>
 <body>
     <div class="wrapper">
-        <form action="/register" method="POST">
-            
+        <form action="/signup" method="post" enctype="multipart/form-data">
             <h1>Registration</h1>
             <div class="input-box">
                 <input type="text" id="name" name="name" required placeholder="Name">
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box"> 
-                <input type="email" id="email" name="email" required placeholder="Email">
+                <input type="email" id="email" name="email" required placeholder="Email" autocomplete="email">
                 <i class='bx bxs-envelope' ></i>
             </div>
             <div class="input-box">
-                <input type="password" id="password" name="password" required placeholder="Password">
+                <input type="password" id="password" name="password" required placeholder="Password" autocomplete="current-password">
                 <i class='bx bxs-lock-open-alt' ></i>
             </div>
-
-            
-
             <button type="submit" class="btn">Register</button>
-            <Button class="btn-google" onclick="signIn()">
+            <button type="button" class="btn-google" onclick="signIn()">
                 <img src="img/icons8-google-100.png" alt="Іконка"> Sign In
-            </Button>
-            
+            </button>
             <div class="register-link">
-                <p>Don't have an account? <a href="/login.html">Login</a></p>
+                <p>Already have an account? <a href="/login.html">Login</a></p>
             </div>
-
         </form>
-       
-
     </div>
-   
-
     <script src="script.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', async function (event) {
+        event.preventDefault(); // Зупиняємо стандартну обробку події відправки форми
+        const formData = new FormData(this); // Отримуємо дані з форми
+        try {
+            const response = await fetch('/signup', {
+                method: 'POST', // Встановлюємо метод POST для відправки даних
+                body: formData // Додаємо дані форми у тіло запиту
+            });
+            if (response.status === 200) { // Перевіряємо код статусу відповіді
+                window.location.href = '/profile'; // Перенаправляємо на сторінку профілю при успішній реєстрації
+            } else {
+                throw new Error('Не вдалося зареєструватися'); // Викидаємо помилку у разі невдалої реєстрації
+            }
+        } catch (error) {
+            console.error('Помилка реєстрації:', error);
+            alert('Не вдалося зареєструватися. Спробуйте ще раз.');
+        }
+    });
+});
+
+    </script>
 </body>
 </html>

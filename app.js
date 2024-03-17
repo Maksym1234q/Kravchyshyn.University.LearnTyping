@@ -173,10 +173,6 @@
 //     res.status(200).send(`Логін користувача з адресою електронної пошти ${email} успішний!`);
 // });
 
-
-
-
-// app.js
 import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
@@ -198,31 +194,9 @@ const publicDirectoryPath = path.join(__dirname, '');
 app.use(express.static(publicDirectoryPath));
 
 // Використовуємо маршрути з файлу routes.js
-app.use('/api', routes);
+app.use('/', routes);
 
-// Маршрут для головної сторінки
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-// Маршрут для сторінки профілю
-app.get('/profile', (req, res) => {
-    res.sendFile(path.join(__dirname, 'profile.html'));
-});
-
-// Маршрут для сторінки входу
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'login.html'));
-});
-
-// Маршрут для сторінки реєстрації
-app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname, 'register.html'));
-});
-
-
-dbConnection
-    .getConnection()
+dbConnection.getConnection()
     .then(() => {
         app.listen(port, () => {
             console.log(`Сервер запущено на порту ${port}`);
@@ -230,5 +204,6 @@ dbConnection
     })
     .catch((err) => {
         console.log(`Не вдалося підключитися до бази даних: ${err.message}`);
-
     });
+
+export default app;

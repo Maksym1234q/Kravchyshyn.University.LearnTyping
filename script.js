@@ -1,3 +1,5 @@
+
+
 function signIn() {
     localStorage.setItem('isRegistered', 'true');
 
@@ -26,4 +28,20 @@ function signIn() {
     }
     document.body.appendChild(form)
     form.submit()
+   
+    
+
+    
+    
+
+
+    
 }
+
+
+
+
+
+
+
+

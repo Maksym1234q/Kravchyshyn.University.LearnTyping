@@ -12,7 +12,7 @@
 <body>
 
     <div class="wrapper">
-        <form action="/login" method="POST">
+        <form action="/login" method="post">
             
             <h1>Login</h1>
             <div class="input-box"> 
@@ -38,5 +38,38 @@
 
     </div>
     <script src="script.js"></script>
+
+    
+<script>
+   document.querySelector('form').addEventListener('submit', async (event) => {
+    event.preventDefault(); // Зупиняємо стандартну поведінку форми (автоматичне перезавантаження сторінки)
+
+    const formData = new FormData(event.target); // Отримуємо дані з форми
+
+    try {
+        const response = await fetch('/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json' // Встановлюємо заголовок Content-Type
+            },
+            body: JSON.stringify(Object.fromEntries(formData.entries())) // Перетворюємо дані форми в JSON та передаємо як тіло запиту
+        });
+
+        if (response.ok) {
+            // Обробка успішної відповіді (наприклад, перенаправлення на іншу сторінку)
+            window.location.href = '/profile'; // Перенаправлення на сторінку профілю після успішного входу
+        } else {
+            // Обробка помилки від сервера
+            const errorData = await response.json();
+            alert(`Помилка: ${errorData.message}`);
+        }
+    } catch (error) {
+        console.error('Сталася помилка:', error);
+        alert('Виникла помилка під час спроби увійти. Будь ласка, спробуйте ще раз.');
+    }
+});
+
+</script>
+
 </body>
 </html>
