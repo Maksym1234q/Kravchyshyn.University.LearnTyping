@@ -4,95 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style_index.css">
+    <link rel="stylesheet" href="style/style_typing.css">
+    <link rel="stylesheet" href="style/style_header.css">
     <title>Home Page</title>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <h1 style="color: aliceblue;">Typing Club</h1>
-            <ul>
-                <li id="registerButton"><a href="register.html">Register</a></li>
-                <li id="logoutButton" ><button onclick="logout()">Logout</button></li>
-                
-            </ul>
-        </nav>
-        <div class="content">
-            <img class="moon" src=".//img/moon.png" alt="#moon">
-            <div class="blok">
-                <h1>
-                    Learn Touch Typing for free!
-                    <i class="cursor"></i>
-                </h1>
-                <button class="btn" type="button" >Get started</button>
+  <header id="header">
+    <h1 style="color: aliceblue;">TypingClub</h1>
+    <nav>
+        <a href="index.html" class="a1">Home</a>
+        <a href="lessons.html" class="a2">Lessons</a>
+        <div class="dropdown">
+            <button class="a2">TypingGame</button>
+            <div class="dropdown-content">
+                <a href="/game_latter_redboll/typer.html">Game 1</a>
+                <a href="/game_keyboard/keyboard.html">Game 2</a>
+                <a href="#">Game 3</a>
             </div>
         </div>
-        <div>
+        <a id="logoutButton" class="a2" onclick="logout()">Logout</a>
+        <a id="registerButton" class="register">Register</a>
+    </nav>
+</header>
+
+
+
+    <div class="container">
+        <div class="content">
+            <img id="moon" class="moon" src=".//img/moon.png" alt="#moon">
+            <div class="blok" id="scrollBlock">
+                <h1>
+                    Learn Touch Typing for free..!
+                    <i class="cursor"></i>
+                </h1>
+                <a href"#" onclick="scrollToNextBlock()" class="btn" type="button">Get started</a>
+            </div>
+            
+        </div>
+        <div> 
             <div id="clouds3" class="clouds" style="background-position-x: 1328.56px; bottom: 3vh;"></div>
             <div id="clouds1" class="clouds" style="bottom: 1vh;"></div>
             <div id="clouds2" class="clouds" style="background-position-x: -2388.96px; bottom: 0vh;"></div>
         </div>
     </div>
-    <div class="container2"></div>
 
+    <div class="container2">
+      <div class="wrapper">
+              <input type="text" class="input-field">
+              <div class="content-box">
+                <div class="typing-text">
+                  <p></p>
+                </div>
+                <div class="content">
+                  <ul class="result-details">
+                    <li class="time">
+                      <p>Time Left:</p>
+                      <span><b>60</b>s</span>
+                    </li>
+                    <li class="mistake">
+                      <p>Mistakes:</p>
+                      <span>0</span>
+                    </li>
+                    <li class="wpm">
+                      <p>WPM:</p>
+                      <span>0</span>
+                    </li>
+                    <li class="cpm">
+                      <p>CPM:</p>
+                      <span>0</span>
+                    </li>
+                  </ul>
+                  <button>Try Again</button>
+                </div>
+              </div>
+        </div>
+        
+    </div>
+
+     
+  <script src="paragraphs.js"></script>
+  <script src="typing.js"></script>
+
+ 
 
 <script>
-        // // Перевірка статусу реєстрації
-        // function checkRegistrationStatus() {
-        //     const isRegistered = localStorage.getItem('isRegistered');
-        //     return isRegistered === 'true';
-        // }
+//скрол
+        function scrollToNextBlock() {
+    const nextBlock = document.querySelector('.container2');
+    nextBlock.scrollIntoView({ behavior: 'smooth' });
+}
 
-        // // Зміна тексту кнопки в залежності від статусу реєстрації
-        // window.onload = function () {
-        //     const isRegistered = checkRegistrationStatus();
-        //     const registerButton = document.getElementById('registerButton');
-        //     const logoutButton = document.getElementById('logoutButton');
 
-        //     if (isRegistered) {
-        //         registerButton.innerHTML = '<a href="profile.html"> Your profile </a>'; 
-        //         logoutButton.innerHTML = '<button onclick="logout()">Logout</button></li>';
-        //     } 
-        // };
-        
-  // Перевірка статусу реєстрації
-  function checkRegistrationStatus() {
-        const isRegistered = localStorage.getItem('isRegistered');
-        return isRegistered === 'true';
+ // Перевірка статусу реєстрації
+ function checkRegistrationStatus() {
+    const isRegistered = localStorage.getItem('isRegistered');
+    return isRegistered === 'true';
+}
+
+// Вихід з акаунта
+function logout() {
+    localStorage.removeItem('isRegistered');
+    localStorage.removeItem('authInfo'); // Видалення authInfo з localStorage
+    updateRegisterButton(); // Оновлення кнопки реєстрації на головній сторінці
+    location.href = "/"; // Перенаправлення на index.html
+}
+
+// Функція оновлення кнопки реєстрації на головній сторінці
+function updateRegisterButton() {
+    const isRegistered = localStorage.getItem('isRegistered');
+    const registerButton = document.getElementById('registerButton');
+    const logoutButton = document.getElementById('logoutButton');
+    
+    if (isRegistered === 'true') {
+        registerButton.innerHTML = '<a href="/profile.html" class="register-link">Profile</a>';
+        // Показуємо кнопку логауту, якщо користувач зареєстрований
+        logoutButton.classList.remove('hidden');
+    } else {
+        registerButton.innerHTML = ' <a href="/register.html" class="register-link">Register</a>';
+        registerButton.onclick = function() {
+            localStorage.setItem('isRegistered', 'false'); // При кліку на кнопку реєстрації, зберігаємо в localStorage, що користувач ще не зареєстрований
+            // Додаткова логіка, якщо необхідно
+        };
+        // Приховуємо кнопку логауту, якщо користувач не зареєстрований
+        logoutButton.classList.add('hidden');
     }
+}
 
-    // Вихід з акаунта
-    function logout() {
-        localStorage.removeItem('isRegistered');
-        localStorage.removeItem('authInfo'); // Видалення authInfo з localStorage
-        updateRegisterButton(); // Оновлення кнопки реєстрації на головній сторінці
-        location.href = "/index.html"; // Перенаправлення на index.html
-    }
-
-    // Функція оновлення кнопки реєстрації на головній сторінці
-    function updateRegisterButton() {
-        const isRegistered = localStorage.getItem('isRegistered');
-        const registerButton = document.getElementById('registerButton');
-        const logoutButton = document.getElementById('logoutButton');
-        
-        if (isRegistered === 'true') {
-            registerButton.innerHTML = '<a href="/profile.html"> Your profile </a>';
-            // Показуємо кнопку логауту, якщо користувач зареєстрований
-            logoutButton.classList.remove('hidden');
-        } else {
-            registerButton.innerHTML = '<a href="/register.html">Register</a>';
-            registerButton.onclick = function() {
-                localStorage.setItem('isRegistered', 'false'); // При кліку на кнопку реєстрації, зберігаємо в localStorage, що користувач ще не зареєстрований
-                // Додаткова логіка, якщо необхідно
-            };
-            // Приховуємо кнопку логауту, якщо користувач не зареєстрований
-            logoutButton.classList.add('hidden');
-        }
-    }
-
-    // Оновлення кнопки реєстрації при завантаженні сторінки
-    window.onload = function() {
-        updateRegisterButton();
-    }; 
+// Оновлення кнопки реєстрації при завантаженні сторінки
+window.onload = function() {
+    updateRegisterButton();
+}; 
 </script>
 </body>
 </html>
