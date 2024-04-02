@@ -1,0 +1,119 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/register.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Login</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        <form action="/auth/login" method="POST">
+            
+            <h1>Login</h1>
+            <div class="input-box"> 
+                <input type="email" id="email" name="email" required placeholder="Email" autocomplete="username">
+                <i class='bx bxs-envelope' ></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="password" name="password" required placeholder="Password" autocomplete="current-password">
+                <i class='bx bxs-lock-open-alt' ></i>
+            </div>
+           
+
+            <button type="submit" class="btn" onclick="login()">Login</button>
+            <Button class="btn-google" onclick="signIn()">
+                <img src="/img/icons8-google-100.png" alt="Іконка">Sign In
+            </Button>
+            <div class="register-link">
+                <p>Don't have an account? <a href="/register">Register</a></p>
+            </div>
+
+        </form>
+        {{#if message }}
+            <h4 class="messager"> {{message}} </h4>
+        {{/if}}
+
+    </div>
+
+
+    
+  
+   <script>
+ 
+
+function login(){
+    localStorage.setItem('isRegistered', 'true');
+}
+
+function signIn() {
+    localStorage.setItem('isRegistered', 'true');
+
+    let oauth2Endpoint = "https://accounts.google.com/o/oauth2/v2/auth"
+
+    let form = document.createElement('form')
+    form.setAttribute('method', 'GET')
+    form.setAttribute('action', oauth2Endpoint)
+
+    let params = {
+        "client_id": "89192876707-q61vsvn6utggb1v0qkt870gcg6h9mjl7.apps.googleusercontent.com",
+        "redirect_uri": "http://localhost:5001/profile",
+        "response_type": "token",
+        "scope": "https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/youtube.readonly",
+        "include_granted_scopes": 'true',
+        'state': 'pass-through-value'
+    }
+
+    for (var p in params) {
+        var input = document.createElement('input')
+        input.setAttribute('type', 'hidden')
+        input.setAttribute('name', p)
+        input.setAttribute('value', params[p])
+        form.appendChild(input)
+    }
+    document.body.appendChild(form)
+    form.submit()
+ 
+}
+
+    </script>
+{{!--     
+<script>
+   document.querySelector('form').addEventListener('submit', async (event) => {
+    event.preventDefault(); // Зупиняємо стандартну поведінку форми (автоматичне перезавантаження сторінки)
+
+    const formData = new FormData(event.target); // Отримуємо дані з форми
+    var object = {};
+    formData.forEach((value, key) => object[key] = value);
+    var json = JSON.stringify(object);
+    try {
+        const response = await fetch('/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json' // Встановлюємо заголовок Content-Type
+            },
+            body: json // Перетворюємо дані форми в JSON та передаємо як тіло запиту
+        });
+
+        if (response.ok) {
+            // Обробка успішної відповіді (наприклад, перенаправлення на іншу сторінку)
+            window.location.href = '/profile.html'; // Перенаправлення на сторінку профілю після успішного входу
+        } else {
+            // Обробка помилки від сервера
+            const errorData = await response.json();
+            alert(`Помилка: ${errorData.message}`);
+        }
+    } catch (error) {
+        console.error('Сталася помилка:', error);
+        alert('Виникла помилка під час спроби увійти. Будь ласка, спробуйте ще раз.');
+    }
+});
+
+</script> --}}
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/profile.css">
+    <title>User profile</title>
+</head>
+<body>
+            <h1>Ласкаво просимо до вашого профілю</h1>
+
+    <div class="profile-info">
+        <img id="image" src="../img/pngtree-vector-business-men-icon-png-image_956508.jpg" alt="Avatar" />
+        <div class="user-details">
+            <h2 id="name">{{ userProfile.name }}</h2>
+            <h3>{{ userProfile.email }}</span></h3>
+
+        </div>
+
+    <ul>
+        {{#each userProgress}}
+            <li>Typing Speed: {{typing_speed}}, Errors Count: {{errors_count}}, Date: {{created_at}}</li>
+        {{/each}}
+    </ul>
+    </div>
+    
+    <button onclick="logout()">Logout</button>
+    <button onclick="goToIndex()">Home</button>
+
+    <script>
+
+    
+        let params = {};
+        let regex = /([^&=]+)=([^&]*)/g, m;
+
+        while(m = regex.exec(location.href)){
+            params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+        }
+
+        if(Object.keys(params).length > 0){
+            localStorage.setItem('authInfo', JSON.stringify(params));
+        }
+
+        window.history.pushState({}, document.title, "/" + "profile");
+
+        let info = JSON.parse(localStorage.getItem('authInfo'));
+
+       
+
+
+        let isGoogleAuth = false;
+      // Перевірка, чи користувач авторизувався через Google
+let authInfo = JSON.parse(localStorage.getItem('authInfo'));
+
+if (authInfo && authInfo['access_token']) {
+    isGoogleAuth = true;
+}
+
+        if (isGoogleAuth) {
+            // Логіка для користувачів, які авторизувалися через Google
+            fetch("https://www.googleapis.com/oauth2/v3/userinfo", {
+                headers: {
+                    "Authorization": `Bearer ${authInfo['access_token']}`
+                }
+            })
+            .then((data) => data.json())
+            .then((info) => {
+                console.log(info);
+                document.getElementById('name').innerHTML += info.name;
+            });
+        } else {
+            
+            // Логіка для користувачів, які авторизувалися не через Google
+            // Наприклад, отримання даних з сервера або бази даних
+            // Ваш код тут...
+        }
+
+        function goToIndex() {
+            window.location.href = '/';
+        }
+
+        function logout() {
+            localStorage.removeItem('isRegistered');
+
+            if (isGoogleAuth) {
+                fetch("https://oauth2.googleapis.com/revoke?token=" + authInfo['access_token'], {
+                    method: 'POST',
+                    headers: {
+                        "Content-type": "application/x-www-form-urlencoded"
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to revoke token');
+                    }
+                    // Successful token revocation
+                    localStorage.removeItem('authInfo'); // Remove authInfo from localStorage
+                    location.href = "/"; // Redirect to index.html
+                })
+                .catch(error => {
+                    console.error('Error revoking token:', error);
+                    // Handle error as needed, e.g., show an error message to the user
+                });
+            }
+            window.location.href = '/';
+        }
+        
+    </script>
+</body>
+</html>
