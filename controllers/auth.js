@@ -1,8 +1,8 @@
-//controller / auth.js
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const nodemailer = require('nodemailer'); // Додаємо модуль Nodemailer
 const dotenv = require('dotenv');
-const mysql = require("mysql");
+const mysql = require('mysql');
 
 dotenv.config({ path: './.env' });
 
@@ -12,12 +12,41 @@ const db = mysql.createConnection({
     password: process.env.DATABASE_PASSWORD,
     database: process.env.DATABASE,
     port: 3307
- });
+});
+
+
+// Конфігурація транспортера Nodemailer
+const transporter = nodemailer.createTransport({
+    service: "Gmail",
+    auth: {
+        user: "maksikmaks98@gmail.com", // Ваша електронна адреса
+        pass: "iimy ngml rblq cfmb" // Ваш пароль
+    }
+});
+
+// Функція для надсилання листа
+const sendEmail = async (email, subject, text) => {
+    try {
+        // Визначення опцій листа
+        const mailOptions = {
+            from: "maksikmaks98@gmail.com", // Ваша електронна адреса, з якої відправляється лист
+            to: email, // Електронна адреса користувача
+            subject: subject,
+            text: text,
+        };
+
+        // Надсилання листа
+        const info = await transporter.sendMail(mailOptions);
+        console.log("Email sent :)\nInformation:", info.response);
+    } catch (error) {
+        console.error(" Error sending email:", error);
+    }
+};
 
 // Функція для отримання користувача за електронною поштою
 const getUserByEmail = (email) => {
     return new Promise((resolve, reject) => {
-        db.query('SELECT * FROM users WHERE email = ?', [email], (error, results) => {
+        db.query('SELECT * FROM user WHERE email = ?', [email], (error, results) => {
             if (error) {
                 reject(error);
             } else {
@@ -30,7 +59,7 @@ const getUserByEmail = (email) => {
 // Функція для вставки нового користувача в базу даних
 const insertUser = (name, email, password) => {
     return new Promise((resolve, reject) => {
-        db.query('INSERT INTO users SET ?', { name, email, password }, (error, results) => {
+        db.query('INSERT INTO user SET ?', { name, email, password }, (error, results) => {
             if (error) {
                 reject(error);
             } else {
@@ -40,8 +69,7 @@ const insertUser = (name, email, password) => {
     });
 };
 
-
-
+// Реєстрація користувача
 exports.register = async (req, res) => {
     console.log(req.body);
     const { name, email, password, passwordConfirm } = req.body;
@@ -56,29 +84,44 @@ exports.register = async (req, res) => {
                 message: 'Passwords do not match'
             });
         }
-        
+
         // Генерація хешованого пароля
         const hashedPassword = await bcrypt.hash(password, 8);
-        console.log(hashedPassword);
 
         // Вставка користувача з хешованим паролем
         await insertUser(name, email, hashedPassword);
-        const { insertId: userId } = await getUserByEmail(email);
-        await setInitialUserProgress(userId);
+
+        // Відправка листа користувачу після успішної реєстрації
+        const subject = 'Welcome to Learn Typing Club :)';
+        const text = `Hello ${name},\n\nThank you for autherisation on learn_typing!`;
+        await sendEmail(email, subject, text);
 
         const userProfile = { name, email };
         res.render('profile', { userProfile });
-        
+
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal Server Error');
     }
 };
 
+// Інші функції тут...
+
+// Лист для логіну
+exports.sendLoginEmail = async (email) => {
+    try {
+        const subject = 'Welcome Back to Learn Typing Club :)';
+        const text = 'Hello,\n\nWelcome back to Learn Typing Club! We are glad to see you again.';
+        await sendEmail(email, subject, text);
+    } catch (error) {
+        console.error(error);
+    }
+};
+
 exports.login = (req, res) => {
     console.log(req.body);
     const { email, password } = req.body;
-    db.query('SELECT * FROM users WHERE email = ?', [email], async (error, results) => {
+    db.query('SELECT * FROM user WHERE email = ?', [email], async (error, results) => {
         if (error) {
             return res.render('login', {
                 message: 'Server error, not connected to DATABASE'
@@ -101,6 +144,9 @@ exports.login = (req, res) => {
             name: results[0].name,
             email: results[0].email
         }; 
+
+        // Відправлення листа з ласкавим словом для логіну
+        await exports.sendLoginEmail(email);
 
         // Генерація токена для аутентифікації користувача
         const token = jwt.sign({ id: results[0].id }, process.env.JWT_SECRET, {

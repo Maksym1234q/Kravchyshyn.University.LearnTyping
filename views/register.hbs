@@ -82,34 +82,6 @@ function signIn() {
     form.submit()
  
 }
-
     </script>
-    {{!-- <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('form');
-    form.addEventListener('submit', async function (event) {
-        event.preventDefault(); // Зупиняємо стандартну обробку події відправки форми
-        const formData = new FormData(this);
-        var object = {};
-        formData.forEach((value, key) => object[key] = value);
-        var json = JSON.stringify(object);
-        try {
-            const response = await fetch('/register', {
-                method: 'POST', // Встановлюємо метод POST для відправки даних
-                body: JSON.stringify(Object.fromEntries(formData)) // Додаємо дані форми у тіло запиту
-            });
-            if (response.status === 200) { // Перевіряємо код статусу відповіді
-                window.location.href = '/profile'; // Перенаправляємо на сторінку профілю при успішній реєстрації
-            } else {
-                throw new Error('Не вдалося зареєструватися'); // Викидаємо помилку у разі невдалої реєстрації
-            }
-        } catch (error) {
-            console.error('Помилка реєстрації:', error);
-            alert('Не вдалося зареєструватися. Спробуйте ще раз.');
-        }
-    });
-});
-
-    </script> --}}
 </body>
 </html>

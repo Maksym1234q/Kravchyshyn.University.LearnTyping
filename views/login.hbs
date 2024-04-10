@@ -81,39 +81,7 @@ function signIn() {
 }
 
     </script>
-{{!--     
-<script>
-   document.querySelector('form').addEventListener('submit', async (event) => {
-    event.preventDefault(); // Зупиняємо стандартну поведінку форми (автоматичне перезавантаження сторінки)
 
-    const formData = new FormData(event.target); // Отримуємо дані з форми
-    var object = {};
-    formData.forEach((value, key) => object[key] = value);
-    var json = JSON.stringify(object);
-    try {
-        const response = await fetch('/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json' // Встановлюємо заголовок Content-Type
-            },
-            body: json // Перетворюємо дані форми в JSON та передаємо як тіло запиту
-        });
-
-        if (response.ok) {
-            // Обробка успішної відповіді (наприклад, перенаправлення на іншу сторінку)
-            window.location.href = '/profile.html'; // Перенаправлення на сторінку профілю після успішного входу
-        } else {
-            // Обробка помилки від сервера
-            const errorData = await response.json();
-            alert(`Помилка: ${errorData.message}`);
-        }
-    } catch (error) {
-        console.error('Сталася помилка:', error);
-        alert('Виникла помилка під час спроби увійти. Будь ласка, спробуйте ще раз.');
-    }
-});
-
-</script> --}}
 
 </body>
 </html>

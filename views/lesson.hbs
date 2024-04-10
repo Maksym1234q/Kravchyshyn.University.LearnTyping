@@ -7,229 +7,371 @@
     <title>Lesson</title>
     <link rel="stylesheet" href="/lesson.css">
     <link rel="stylesheet" href="/header.css">
-
+    
+ 
 </head>
 <body>
-    <div class="container1">
-        <header id="header">
-    <h1 style="color: aliceblue;">TypingClub</h1>
-    <nav>
-        <a href="/" class="a1">Home</a>
-        <a href="/lesson" class="a2">Lessons</a>
-        <div class="dropdown">
-    <button class="a2">TypingGame</button>
-    <div class="dropdown-content">
-        <a href="/game-2" class="game-link"><img src="../img/icons8-typing-50.png" alt="Game 1"> Game1</a>
-        <div class="game-details">
-            <img src="../img/game_2.png" alt="Game 1">
-            <h2>Keyboard game training</h2>
-            <p>You need to press the letter that stands out on the keyboard, this is just training...</p>
-        </div>
-        <a href="/game-1" class="game-link"><img src="../img/icons8-typing-50.png" alt="Game 2"> Game2</a>
-        <div class="game-details">
-            <img src="../img/game_1.png" alt="Game 1">
-            <h2>Latters game boll</h2>
-            <p>You need to click on the letter that falls from top to bottom so that the letter does not touch the bottom side...</p>
-        </div>
-        <a href="/game-3" class="game-link"><img src="../img/icons8-typing-50.png" alt="Game 3"> Game3</a>
-        <div class="game-details">
-            <img src="../img/game_3.png" alt="Game 1">
-            <h2>Words game spped</h2>
-            <p>You need to enter the words on the screen while the time is 60 seconds...</p>
-        </div>
+<div class="container1">
+    <header id="header">
+        <h1 style="color: aliceblue;">TypingClub</h1>
+        <nav>
+            <a href="/" class="a1">Home</a>
+            <a href="/lesson" class="a2">Lessons</a>
+            <div class="dropdown">
+                <button class="a2">TypingGame</button>
+                <div class="dropdown-content">
+                    <a href="/game-2" class="game-link"><img src="../img/icons8-typing-50.png" alt="Game 1"> Game1</a>
+                    <div class="game-details">
+                        <img src="../img/game_2.png" alt="Game 1">
+                        <h2>Keyboard game training</h2>
+                        <p>You need to press the letter that stands out on the keyboard, this is just training...</p>
+                    </div>
+                    <a href="/game-1" class="game-link"><img src="../img/icons8-typing-50.png" alt="Game 2"> Game2</a>
+                    <div class="game-details">
+                        <img src="../img/game_1.png" alt="Game 1">
+                        <h2>Latters game boll</h2>
+                        <p>You need to click on the letter that falls from top to bottom so that the letter does not touch the bottom side...</p>
+                    </div>
+                    <a href="/game-3" class="game-link"><img src="../img/icons8-typing-50.png" alt="Game 3"> Game3</a>
+                    <div class="game-details">
+                        <img src="../img/game_3.png" alt="Game 1">
+                        <h2>Words game spped</h2>
+                        <p>You need to enter the words on the screen while the time is 60 seconds...</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+</div>
+
+<div class="container2">
+    {{!-- <h1>Typing Lessons</h1> --}}
+
+
+    <div class="scroll-buttons">
+        <button onclick="scrollToStage(1)">Alphabet</button>
+        <br>
+        <button onclick="scrollToStage(2)">The Shift Key</button>
+        <br>
+        <button onclick="scrollToStage(3)">Numbers</button>
     </div>
-</div>
-    </nav>
-</header>
-    </div>
+    {{!-- /*---------------------------------------- Lessons ----------------------------------------------*/ --}}
 
+    <div class="stage" id="stage1">
+        <span class="type-lesson">Alphabet</span>
+        <div class="container">
 
+            <card class="lesson-card" onclick="window.location.href='/lesson-1'">
+                <div class="front">
+                    <h2 class="h2">Level 1 </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning 'FJ'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes for 'f' and 'j' to improve speed and accuracy.</p>
+                </div>
+            </card>
 
-   <div class="container2">
-        <h1>Уроки друку</h1>
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
 
-        <div class="lesson-cards">
-            <div class="lesson-card">
-    <h2>Урок 1: Навчання буквам 'AS'</h2>
-    <p>Вивчайте правильне натискання на клавіші 'A' та 'S' для покращення швидкості та точності.</p>
-    <a href="/lesson/as">Почати урок</a>
-</div>
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
 
-<div class="lesson-card">
-    <h2>Урок 2: Навчання буквам 'DF'</h2>
-    <p>Покращуйте свої навички, вивчаючи правильне натискання на клавіші 'D' та 'F'.</p>
-    <a href="/lesson/df">Почати урок</a>
-</div>
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
 
-<div class="lesson-card">
-    <h2>Урок 3: Навчання буквам 'GH'</h2>
-    <p>Ознайомтеся з правильним натисканням клавіш 'G' та 'H' для покращення навичок друку.</p>
-    <a href="/lesson/gh">Почати урок</a>
-</div>
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
 
-<div class="lesson-card">
-    <h2>Урок 4: Навчання буквам 'JK'</h2>
-    <p>Натискайте на клавіші 'J' та 'K' для вдосконалення вашої швидкості та точності.</p>
-    <a href="/lesson/jk">Почати урок</a>
-</div>
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
 
-<div class="lesson-card">
-    <h2>Урок 5: Навчання буквам 'L;'</h2>
-    <p>Покращуйте свої навички, вивчаючи правильне натискання на клавіші 'L' та ';'</p>
-    <a href="/lesson/l;">Почати урок</a>
-</div>
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
 
-<div class="lesson-card">
-    <h2>Урок 6: Навчання буквам 'ZX'</h2>
-    <p>Ознайомтеся з правильним натисканням клавіш 'Z' та 'X' для покращення навичок друку.</p>
-    <a href="/lesson/zx">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 7: Навчання буквам 'CV'</h2>
-    <p>Вивчайте правильне натискання на клавіші 'C' та 'V' для покращення вашого навички друку.</p>
-    <a href="/lesson/cv">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 8: Навчання буквам 'BN'</h2>
-    <p>Натискайте на клавіші 'B' та 'N' для вдосконалення вашої швидкості та точності.</p>
-    <a href="/lesson/bn">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 9: Навчання буквам 'MQ'</h2>
-    <p>Покращуйте свої навички, вивчаючи правильне натискання на клавіші 'M' та 'Q'.</p>
-    <a href="/lesson/mq">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 10: Навчання буквам 'WP'</h2>
-    <p>Ознайомтеся з правильним натисканням клавіш 'W' та 'P' для покращення навичок друку.</p>
-    <a href="/lesson/wp">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 11: Навчання буквам 'ER'</h2>
-    <p>Вивчайте правильне натискання на клавіші 'E' та 'R' для покращення вашого навички друку.</p>
-    <a href="/lesson/er">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 12: Навчання буквам 'TY'</h2>
-    <p>Натискайте на клавіші 'T' та 'Y' для вдосконалення вашої швидкості та точності.</p>
-    <a href="/lesson/ty">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 13: Навчання буквам 'UI'</h2>
-    <p>Покращуйте свої навички, вивчаючи правильне натискання на клавіші 'U' та 'I'.</p>
-    <a href="/lesson/ui">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 14: Навчання буквам 'OP'</h2>
-    <p>Ознайомтеся з правильним натисканням клавіш 'O' та 'P' для покращення навичок друку.</p>
-    <a href="/lesson/op">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 15: Навчання буквам 'FG'</h2>
-    <p>Вивчайте правильне натискання на клавіші 'F' та 'G' для покращення вашого навички друку.</p>
-    <a href="/lesson/fg">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 16: Навчання буквам 'HV'</h2>
-    <p>Натискайте на клавіші 'H' та 'V' для вдосконалення вашої швидкості та точності.</p>
-    <a href="/lesson/hv">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 17: Навчання буквам 'NM'</h2>
-    <p>Покращуйте свої навички, вивчаючи правильне натискання на клавіші 'N' та 'M'.</p>
-    <a href="/lesson/nm">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 18: Навчання буквам 'V,.'</h2>
-    <p>Ознайомтеся з правильним натисканням клавіш 'V', ',' та '.' для покращення навичок друку.</p>
-    <a href="/lesson/v,.">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 19: Навчання буквам 'B/'</h2>
-    <p>Вивчайте правильне натискання на клавіші 'B' та '/' для покращення вашого навички друку.</p>
-    <a href="/lesson/b/">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 20: Навчання буквам 'C['</h2>
-    <p>Натискайте на клавіші 'C' та '[' для вдосконалення вашої швидкості та точності.</p>
-    <a href="/lesson/c[">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 21: Навчання буквам 'D]'</h2>
-    <p>Покращуйте свої навички, вивчаючи правильне натискання на клавіші 'D' та ']'.</p>
-    <a href="/lesson/d]">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 22: Навчання буквам 'F;'</h2>
-    <p>Ознайомтеся з правильним натисканням клавіш 'F' та ';' для покращення навичок друку.</p>
-    <a href="/lesson/f;">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 23: Навчання буквам 'G.'</h2>
-    <p>Вивчайте правильне натискання на клавіші 'G' та '.' для покращення вашого навички друку.</p>
-    <a href="/lesson/g.">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 24: Навчання буквам 'H,'</h2>
-    <p>Натискайте на клавіші 'H' та ',' для вдосконалення вашої швидкості та точності.</p>
-    <a href="/lesson/h,">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 25: Навчання буквам 'JK'</h2>
-    <p>Покращуйте свої навички, вивчаючи правильне натискання на клавіші 'J' та 'K'.</p>
-    <a href="/lesson/jk">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 26: Навчання буквам 'L;'</h2>
-    <p>Ознайомтеся з правильним натисканням клавіш 'L' та ';' для покращення навичок друку.</p>
-    <a href="/lesson/l;">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 27: Навчання буквам 'ZX'</h2>
-    <p>Вивчайте правильне натискання на клавіші 'Z' та 'X' для покращення вашого навички друку.</p>
-    <a href="/lesson/zx">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 28: Навчання буквам 'CV'</h2>
-    <p>Натискайте на клавіші 'C' та 'V' для вдосконалення вашої швидкості та точності.</p>
-    <a href="/lesson/cv">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 29: Навчання буквам 'BN'</h2>
-    <p>Покращуйте свої навички, вивчаючи правильне натискання на клавіші 'B' та 'N'.</p>
-    <a href="/lesson/bn">Почати урок</a>
-</div>
-
-<div class="lesson-card">
-    <h2>Урок 30: Навчання буквам 'MQ'</h2>
-    <p>Ознайомтеся з правильн
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
 
         </div>
     </div>
 
+    <div class="stage" id="stage2">
+        <span class="type-lesson">The Shift Key</span>
+        <div class="container">
+
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
+
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
+
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
+
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
+
+
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
+
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
+
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
+
+        </div>
+    </div>
+
+    <div class="stage" id="stage3">
+        <span class="type-lesson">Numbers</span>
+        <div class="container">
+
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
+
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
+
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
+
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
+
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
+
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
+
+            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+                <div class="front">
+                    <h2 class="h2">Level - </h2>
+                    <div class="img">
+                        <img src="/img/abc.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Learning '-'</h3>
+                </div>
+                <div class="back">
+                    <p>Learn the correct keystrokes - ...</p>
+                </div>
+            </card>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript function to scroll to a specific stage
+    function scrollToStage(stage) {
+        document.getElementById('stage' + stage).scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
 
 </body>
 </html>

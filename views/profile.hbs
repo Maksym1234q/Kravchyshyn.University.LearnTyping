@@ -29,6 +29,7 @@
 
     <script>
 
+
     
         let params = {};
         let regex = /([^&=]+)=([^&]*)/g, m;
@@ -75,12 +76,16 @@ if (authInfo && authInfo['access_token']) {
             // Ваш код тут...
         }
 
+     
+
         function goToIndex() {
             window.location.href = '/';
         }
 
         function logout() {
             localStorage.removeItem('isRegistered');
+
+            
 
             if (isGoogleAuth) {
                 fetch("https://oauth2.googleapis.com/revoke?token=" + authInfo['access_token'], {

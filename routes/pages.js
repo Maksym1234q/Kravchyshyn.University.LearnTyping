@@ -16,9 +16,7 @@ router.get('/login', (req, res) => {
 router.get('/profile', (req, res) => {
     res.render('profile'); 
 });
-router.get('/lesson', (req, res) => {
-    res.render('lesson'); 
-});
+
 router.get('/game-1', (req,res) => {
     res.render('game-1');
 })
@@ -28,6 +26,13 @@ router.get('/game-2', (req,res) => {
 router.get('/game-3', (req,res) => {
     res.render('game-3');
 })
+router.get('/lesson', (req, res) => {
+    res.render('lesson'); 
+});
+router.get('/lesson-1', (req, res) => {
+    res.render('lesson-1'); 
+});
+
 
 
 
