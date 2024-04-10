@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x' # Оновлюємо версію Node.js до 20.x
+          node-version: '18.x' # Оновлюємо версію Node.js до 20.x
 
       - name: npm install, build, and test
         run: |
