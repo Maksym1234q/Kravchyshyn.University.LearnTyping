@@ -11,13 +11,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-    <title>Level 1</title>
+    <title>Level 3</title>
   </head>
   <body>
     <div id="overlay" class="overlay-visible"></div>
     <main class="app-container">
       <header>
-        <h1 class="site-name">Level 1 ⌨️</h1>
+        <h1 class="site-name">Level 3 ⌨️</h1>
       </header>
       <div class="typing-container">
         <div class="statistics-wrapper">
@@ -91,18 +91,21 @@
           <tbody id="results-table"></tbody>
         </table>
       </div>
-      <br>
+       <br>
       <h2>Your typing progres</h2>
       <br>
       <br>
-      <canvas id="combined-chart"></canvas>
-      
+    <canvas id="combined-chart"></canvas>
     </main> 
 
 
 
 
     <script>
+
+
+
+
       const TimeLimit = {
     time10 : 10,
     time30: 30,
@@ -212,8 +215,7 @@ let chart = new Chart(document.getElementById("chart"), config);
 
 
 const customWords = [
-   "f","j","f","j", "f", "j", "j", "f", "f", "j", "f","j","f","j", "f", "j", "j","j","f","j","f","j", "f", "j", "j","f","j","f","j","fj","jf", "ff", "j", "jfj", "f","fj","ff","jj","fjf","jf","fjj","jfjj","fj","fjf","j","f","j","fj","jf", "ff", "j", "jfj", "f","fj","ff","jj","fjf","jf","fjj","jfjj","fj","fjf","ffjf","fjjjf","jjfjj","ffffj","fjfjfj","fjjfjfj","fjj","ffjfjjjf","fjjfjfjjjjf","j","f","jjj","jjfj","fj","f","fj","fffj","jjjfjff","fjfjfjjjf","jf","f","f","jjjf","fjfjjfjjf","fjjfjffj"
-    // Додайте інші слова якщо потрібно
+"f","j","d","k","kd","d","k","f","j","kdf","fj","f","k","d","k","kd","d","k","f","j","jj","fj","f","j","d","k","kd","d","k","f","j","jj","fj","fk","ddfff","jjkd","jjjk","dfkkk","fdjjj","jjdffk","kdj","dkjjk","dfkkj","dfkk","dfkjfddk","kjdfjkkfdk","kkjdfjjf","dfjkkfj","fjkkkdk","kkkjjjd","ddjk"
 ];
 /*function getRandomWords() {
     return fetch("https://api.quotable.io/random?minLength=150&maxLength=200")
@@ -737,8 +739,6 @@ function renderNewResult(table) {
         renderCombinedChart(resultsData); // Оновлення графіка з новими даними
     }
 }
-
-
     </script>
   </body>
 </html>

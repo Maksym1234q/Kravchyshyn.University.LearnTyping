@@ -1,11 +1,12 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
 body{
+  font-family: 'Montserrat', sans-serif;
     background-image: radial-gradient(circle, #5c0067 10%, #084f8e 100%);
 }
 
@@ -60,7 +61,10 @@ body{
   padding: 10px;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.993);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
   transform: rotateY(180deg);
 }
 .lesson-card:hover .front {transform: rotateY(180deg);}
@@ -103,17 +107,30 @@ body{
 
 
 .scroll-buttons {
-  /* text-align: center; */
-  
+  text-align: center;
   position: fixed;
-  
+  top: 20px; /* Встановлюємо положення знизу */
+  left: 50%; /* Центруємо відносно горизонталі */
+  transform: translateX(-50%); /* Центруємо відносно вертикалі */
+  z-index: 1000; /* Забезпечуємо високий індекс накладання, щоб кнопки були поверх іншого контенту */
 }
 
-.scroll-buttons button{
+.scroll-buttons button {
   font-size: 20px;
-  margin:5px;
-  
+  margin: 5px;
+  padding: 10px 20px; /* Додаємо відступи всередині кнопки */
+  border: none; /* Видаляємо межу */
+  border-radius: 5px; /* Закруглюємо кути */
+  background-color: #084f8e; /* Задаємо колір фону */
+  color: #fff; /* Задаємо колір тексту */
+  cursor: pointer; /* Змінюємо вигляд курсора при наведенні на кнопку */
+  transition: background-color 0.3s ease; /* Додаємо плавний перехід для зміни кольору фону */
 }
+
+.scroll-buttons button:hover {
+  background-color: #5f43b2; /* Змінюємо колір фону при наведенні на кнопку */
+}
+
 
 .type-lesson{
     color: white;

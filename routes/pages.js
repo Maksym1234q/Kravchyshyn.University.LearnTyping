@@ -32,6 +32,15 @@ router.get('/lesson', (req, res) => {
 router.get('/lesson-1', (req, res) => {
     res.render('lesson-1'); 
 });
+router.get('/lesson-2', (req, res) => {
+    res.render('lesson-2'); 
+});
+router.get('/lesson-3', (req, res) => {
+    res.render('lesson-3'); 
+});
+router.get('/lesson-4', (req, res) => {
+    res.render('lesson-4'); 
+});
 
 
 

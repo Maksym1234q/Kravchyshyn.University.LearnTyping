@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="/index.css">
     <link rel="stylesheet" href="/typing.css">
     <link rel="stylesheet" href="/header.css">
+
+
     <title>Home Page</title>
 </head>
 <body>
-  <header id="header">
+    <div class="all">
+        <header id="header">
     <h1 style="color: aliceblue;">TypingClub</h1>
     <nav>
         <a href="/" class="a1">Home</a>
@@ -46,12 +49,12 @@
 
 
     <div class="container">
-
-        <section class="wrapper">
+        <section class="wrapper2" >
         <div id="stars"></div>
         <div id="stars2"></div>
         <div id="stars3"></div>
         </section>
+
         <div class="content">
             <img id="moon" class="moon" src="..//img/moon.png" alt="#moon">
             <div class="blok" id="scrollBlock">
@@ -71,159 +74,422 @@
     </div>
 
     <div class="container2">
-      <div class="wrapper">
-              <input type="text" class="input-field">
-              <div class="content-box">
-                <div class="typing-text">
-                  <p></p>
-                </div>
-                <div class="content">
-                  <ul class="result-details">
-                    <li class="time">
-                      <p>Time Left:</p>
-                      <span><b>60</b>s</span>
-                    </li>
-                    <li class="mistake">
-                      <p>Mistakes:</p>
-                      <span>0</span>
-                    </li>
-                    <li class="wpm">
-                      <p>WPM:</p>
-                      <span>0</span>
-                    </li>
-                    <li class="cpm">
-                      <p>CPM:</p>
-                      <span>0</span>
-                    </li>
-                  </ul>
-                  <button>Try Again</button>
-                </div>
-              </div>
-        </div>
         
+      <div class="container-fluid box ">
+      <div class="top">
+          <h1 id="heading" class = "yellow">Typing Speed Test</h1>
+          <div class="limits-box">
+            <div class="limit">
+              <a id="thirty" class="yellow"  href="#" >30s</a>
+              <a id="sixty"  href="#" >60s</a>
+            </div>
+            <div class="limit">
+              <a id="beg" class="yellow"  href="#" >beginner</a>
+              <a id="pro"  href="#" >pro</a>
+            </div>
+
+          </div>
+      </div>
+      <div class="stats center">
+        <div class="stat-block if">
+          <div id="timeName" class = "stat-name yellow if">Time</div>
+          <div id="time" class="details if ">30</div>
+        </div>
+
+        <div class="stat-block if">
+          <div id="cwName" class = "stat-name yellow if">CW</div>
+          <div id="cw" class="details if">0</div>
+        </div>
+      </div>
+      <div class="text-display" id="textDisplay">
+      </div>
+      <div class="input-area center">
+        <textarea rows="1" class="text-input" id="textInput" autofocus autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+      </div>
+      <div  class="restart-button center">
+        <a id="restartBtn" class = "current" href="#">
+          <i class="fas fa-redo"></i>
+        </a>
+      </div>
+    </div>
+    <div class="hand1">
+        <img src="/img/left-home-row-5.webp" alt="">
+    </div>
+    <div class="hand2">
+        <img src="/img/right-resting-hand.webp" alt="">
+    </div>
+<div class="keyboard-base">
+        <div class="key">~</div>
+        <div class="key">1</div>
+        <div class="key">2</div>
+        <div class="key">3</div>
+        <div class="key">4</div>
+        <div class="key">5</div>
+        <div class="key">6</div>
+        <div class="key">7</div>
+        <div class="key">8</div>
+        <div class="key">9</div>
+        <div class="key">0</div>
+        <div class="key">-</div>
+        <div class="key">+</div>
+        <div class="key delete">Delete</div>
+        <div class="key tab">Tab</div>
+        <div class="key">Q</div>
+        <div class="key">w</div>
+        <div class="key">E</div>
+        <div class="key">R</div>
+        <div class="key">T</div>
+        <div class="key">Y</div>
+        <div class="key">U</div>
+        <div class="key">I</div>
+        <div class="key">O</div>
+        <div class="key">P</div>
+        <div class="key">[</div>
+        <div class="key">]</div>
+        <div class="key backslash">\</div>
+        <div class="key capslock">CapsLock</div>
+        <div class="keyA">A</div>
+        <div class="key">S</div>
+        <div class="key">D</div>
+        <div class="key">F</div>
+        <div class="key">G</div>
+        <div class="key">H</div>
+        <div class="key">J</div>
+        <div class="key">K</div>
+        <div class="key">L</div>
+        <div class="key">;</div>
+        <div class="key">'</div>
+        <div class="key return">Return</div>
+        <div class="key leftshift">Shift</div>
+        <div class="key">Z</div>
+        <div class="key">X</div>
+        <div class="key">C</div>
+        <div class="key">V</div>
+        <div class="key">B</div>
+        <div class="key">N</div>
+        <div class="key">M</div>
+        <div class="key">,</div>
+        <div class="key">.</div>
+        <div class="key">/</div>
+        <div class="key rightshift">Shift</div>
+        <div class="key leftctrl">Ctrl</div>
+        <div class="key">Alt</div>
+        <div class="key command">Command</div>
+        <div class="key space">Space</div>
+        <div class="key command">command</div>
+        <div class="key">Alt</div>
+        <div class="key">Ctrl</div>
+        <div class="key">Fn</div>
+    </div>
+    
+    </div>
+    
+
+    <div class="info-block">
+    <ul style="margin-left: 100px;">
+        <div class="img-container3"><img src="/img/page-1.png" alt=""></div>
+        <li>23 million+ <br>Students</li>
+         <div class="img-container3"><img src="/img/page-2.png" alt=""></div>
+        <li>50,000+  <br>Schools & Districts</li>
+         <div class="img-container3"><img src="/img/page-3.png" alt=""></div>
+        <li>300,000+  <br>Teachers</li>
+    </ul>
+    </div>
+    
+
+    <div class="container3">
+    <div class="text-block">
+        <span class="top-typing-text">WHAT IS TYPINGCLUB?</span>
+        <h2>TypingClub is the most effective way to learn how to type.</h2>
+        <br>
+        <p> It is web based and highly effective. TypingClub is (and will always be) free for both individuals and schools. There is an optional paid school edition.</p>
+        <a href="/lesson" class="btn-link">
+        <button class="btn-lesson">Get started now</button>
+        </a>  
+    </div>
+    <div class="image-block">
+         <img alt="" class="img-experience__lg" src="https://static.typingclub.com/m/website/typingclub/interactive-1.svg">
+    </div>
+</div>
+
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2024 Ваша компанія. Усі права захищені.</p>
+        <ul class="footer-links">
+            <li><a href="#">Домашня сторінка</a></li>
+            <li><a href="#">Про нас</a></li>
+            <li><a href="#">Контакти</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+    <div class="notWork">
+        <p>Device Not Support</p>
     </div>
 
-   
-  
-  <script >
-const paragraphs = [
-    "Authors often misinterpret the lettuce as a folklore rabbi, when in actuality it feels more like an uncursed bacon. Pursued distances show us how mother-in-laws can be charleses. Authors often misinterpret the lion as a cormous science, when in actuality it feels more like a leprous lasagna. Recent controversy aside, their band was, in this moment, a racemed suit. The clutch of a joke becomes a togaed chair. The first pickled chess is.",
-    "In modern times the first scrawny kitten is, in its own way, an input. An ostrich is the beginner of a roast. An appressed exhaust is a gun of the mind. A recorder is a grade from the right perspective. A hygienic is the cowbell of a skin. Few can name a dun brazil that isn't a highbrow playroom. The unwished beast comes from a thorny oxygen. An insured advantage's respect comes with it the thought that the lucid specialist is a fix.",
-    "In ancient times the legs could be said to resemble stroppy vegetables. We can assume that any instance of a centimeter can be construed as an enate paste. One cannot separate pairs from astute managers. Those americas are nothing more than fish. If this was somewhat unclear, authors often misinterpret the gosling as an unfelt banjo, when in actuality it feels more like a professed galley. A bow of the squirrel is assumed.",
-    "What we don't know for sure is whether or not a pig of the coast is assumed to be a hardback pilot. The literature would have us believe that a dusky clave is not but an objective. Few can name a limbate leo that isn't a sunlit silver. The bow is a mitten. However, the drawer is a bay. If this was somewhat unclear, few can name a paunchy blue that isn't a conoid bow. The undrunk railway reveals itself as a downstage bamboo to those who look.",
-    "Their politician was, in this moment, a notour paperback. The first armless grouse is, in its own way, a gear. The coat is a wash. However, a cake is the llama of a caravan. Snakelike armies show us how playgrounds can be viscoses. Framed in a different way, they were lost without the fatal dogsled that composed their waitress. Far from the truth, the cockney freezer reveals itself as a wiggly tornado to those who look. The first hawklike sack.",
-    "An aunt is a bassoon from the right perspective. As far as we can estimate, some posit the melic myanmar to be less than kutcha. One cannot separate foods from blowzy bows. The scampish closet reveals itself as a sclerous llama to those who look. A hip is the skirt of a peak. Some hempy laundries are thought of simply as orchids. A gum is a trumpet from the right perspective. A freebie flight is a wrench of the mind. Some posit the croupy.",
-    "A baby is a shingle from the right perspective. Before defenses, collars were only operations. Bails are gleesome relatives. An alloy is a streetcar's debt. A fighter of the scarecrow is assumed to be a leisured laundry. A stamp can hardly be considered a peddling payment without also being a crocodile. A skill is a meteorology's fan. Their scent was, in this moment, a hidden feeling. The competitor of a bacon becomes a boxlike cougar.",
-    "A broadband jam is a network of the mind. One cannot separate chickens from glowing periods. A production is a faucet from the right perspective. The lines could be said to resemble zincoid females. A deborah is a tractor's whale. Cod are elite japans. Some posit the wiglike norwegian to be less than plashy. A pennoned windchime's burst comes with it the thought that the printed trombone is a supply. Relations are restless tests.",
-    "In recent years, some teeming herons are thought of simply as numbers. Nowhere is it disputed that an unlaid fur is a marble of the mind. Far from the truth, few can name a glossy lier that isn't an ingrate bone. The chicken is a giraffe. They were lost without the abscessed leek that composed their fowl. An interviewer is a tussal bomb. Vanward maracas show us how scarfs can be doubts. Few can name an unguled punch that isn't pig.",
-    "A cough is a talk from the right perspective. A designed tractor's tray comes with it the thought that the snuffly flax is a rainbow. Their health was, in this moment, an earthy passbook. This could be, or perhaps the swordfishes could be said to resemble healthy sessions. A capricorn is a helium from the right perspective. However, a sled is a mailman's tennis. The competitor of an alarm becomes a toeless raincoat. Their twist was, in this moment.",
-    "Authors often misinterpret the flag as a wayless trigonometry, when in actuality it feels more like a bousy gold. Few can name a jasp oven that isn't a stutter grape. They were lost without the huffy religion that composed their booklet. Those waves are nothing more than pedestrians. Few can name a quartered semicolon that isn't a rounding scooter. Though we assume the latter, the literature would have us believe.",
-    "This could be, or perhaps few can name a pasteboard quiver that isn't a brittle alligator. A swordfish is a death's numeric. Authors often misinterpret the mist as a swelling asphalt, when in actuality it feels more like a crosswise closet. Some posit the tonal brother-in-law to be less than newborn. We know that the sizes could be said to resemble sleepwalk cycles. Before seasons, supplies were only fighters. Their stew was, in this moment.",
-    "The vision of an attempt becomes a lawny output. Dibbles are mis womens. The olden penalty reveals itself as a bustled field to those who look. Few can name a chalky force that isn't a primate literature. However, they were lost without the gamy screen that composed their beret. Nowhere is it disputed that a step-uncle is a factory from the right perspective. One cannot separate paints from dreary windows. What we don't know for sure is whether.",
-    "A tramp is a siamese from the right perspective. We know that a flitting monkey's jaw comes with it the thought that the submersed break is a pamphlet. Their cream was, in this moment, a seedy daffodil. The nest is a visitor. Far from the truth, they were lost without the released linen that composed their step-sister. A vibraphone can hardly be considered a pardine process without also being an archaeology. The bay of a hyacinth becomes.",
-    "The frosts could be said to resemble backstage chards. One cannot separate colleges from pinkish bacons. Far from the truth, the mom of a rooster becomes a chordal hydrogen. A tempo can hardly be considered a purer credit without also being a pajama. The first combined ease is, in its own way, a pantyhose. Extending this logic, the guides could be said to resemble reddest monkeies. Framed in a different way, an addle hemp is a van.",
-    "Far from the truth, an ajar reminder without catamarans is truly a foundation of smarmy semicircles. An alike board without harps is truly a satin of fated pans. A hubcap sees a parent as a painful beautician. The zeitgeist contends that some intense twigs are thought of simply as effects. A cross is a poppied tune. The valanced list reveals itself as an exchanged wrist to those who look. Recent controversy aside.",
-    "The hefty opinion reveals itself as a sterile peer-to-peer to those who look. This could be, or perhaps the watch of a diamond becomes a bosom baboon. In recent years, some posit the unstuffed road to be less than altern. It's an undeniable fact, really; the livelong lettuce reveals itself as an unstuffed soda to those who look. In ancient times a bit is a balance's season. The popcorn of a morning becomes a moonless beauty.",
-    "If this was somewhat unclear, a friend is a fridge from the right perspective. An upset carriage is a stitch of the mind. To be more specific, a temper is a pair from the right perspective. Authors often misinterpret the liquid as a notchy baseball, when in actuality it feels more like an unbarbed angle. Though we assume the latter, the first vagrom report is, in its own way, a tower. We know that the octopus of a cd becomes an unrent dahlia.",
-    "A reptant discussion's rest comes with it the thought that the condemned syrup is a wish. The drake of a wallaby becomes a sonant harp. If this was somewhat unclear, spotty children show us how technicians can be jumps. Their honey was, in this moment, an intime direction. A ship is the lion of a hate. They were lost without the croupous jeep that composed their lily. In modern times a butcher of the birth is assumed to be a spiral bean.",
-    "Those cowbells are nothing more than elements. This could be, or perhaps before stockings, thoughts were only opinions. A coil of the exclamation is assumed to be a hurtless toy. A board is the cast of a religion. In ancient times the first stinko sailboat is, in its own way, an exchange. Few can name a tutti channel that isn't a footless operation. Extending this logic, an oatmeal is the rooster of a shake. Those step-sons are nothing more than matches."
-];
-    
-const typingText = document.querySelector(".typing-text p"),
-inpField = document.querySelector(".wrapper .input-field"),
-tryAgainBtn = document.querySelector(".content button"),
-timeTag = document.querySelector(".time span b"),
-mistakeTag = document.querySelector(".mistake span"),
-wpmTag = document.querySelector(".wpm span"),
-cpmTag = document.querySelector(".cpm span");
+ <!-- Bootstrap script -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-let timer,
-maxTime = 60,
-timeLeft = maxTime,
-charIndex = mistakes = isTyping = 0;
+<script>  //typing speed test js----------------
+    const testItem = document.getElementById("textDisplay");
+const inputItem = document.getElementById("textInput");
+const timeName = document.getElementById("timeName");
+const time = document.getElementById("time");
+const cwName = document.getElementById("cwName");
+const cw = document.getElementById("cw");
+const restartBtn = document.getElementById("restartBtn");
+const thirty = document.getElementById("thirty");
+const sixty = document.getElementById("sixty");
+const beg = document.getElementById("beg");
+const pro = document.getElementById("pro");
 
-function loadParagraph() {
-    const ranIndex = Math.floor(Math.random() * paragraphs.length);
-    typingText.innerHTML = "";
-    paragraphs[ranIndex].split("").forEach(char => {
-        let span = `<span>${char}</span>`
-        typingText.innerHTML += span;
-    });
-    typingText.querySelectorAll("span")[0].classList.add("active");
-    document.addEventListener("keydown", () => inpField.focus());
-    typingText.addEventListener("click", () => inpField.focus());
+var wordNo = 1;
+var wordsSubmitted = 0;
+var wordsCorrect = 0;
+var timer = 30;
+var flag=0;
+var factor=2;
+var seconds;
+var difficulty=1;
+
+displayTest(difficulty);
+
+//on Input
+inputItem.addEventListener('input', function(event){
+  if(flag===0){
+    flag=1;
+    timeStart();
+  }
+  var charEntered = event.data;
+  if(/\s/g.test(charEntered)){  //check if the character entered is a whitespace
+    checkWord();
+  }
+  else{
+    currentWord();
+  }
+});
+
+//time selection
+thirty.addEventListener("click",function(){
+  timer = 30;
+  factor = 2;
+  limitColor(thirty,sixty);
+  time.innerText = timer;
+});
+sixty.addEventListener("click",function(){
+  timer = 60;
+  factor = 1;
+  limitColor(sixty, thirty);
+  time.innerText = timer;
+});
+
+//difficulty Selection
+beg.addEventListener("click",function(){
+  difficulty = 1;
+  displayTest(difficulty);
+  limitColor(beg,pro);
+});
+pro.addEventListener("click",function(){
+  difficulty = 2;
+  displayTest(difficulty);
+  limitColor(pro,beg);
+});
+
+//set the color of time and difficulty
+function limitColor(itema,itemr ){
+  itema.classList.add('yellow');
+  itemr.classList.remove('yellow');
 }
 
-function initTyping() {
-    let characters = typingText.querySelectorAll("span");
-    let typedChar = inpField.value.split("")[charIndex];
-    if(charIndex < characters.length - 1 && timeLeft > 0) {
-        if(!isTyping) {
-            timer = setInterval(initTimer, 1000);
-            isTyping = true;
-        }
-        if(typedChar == null) {
-            if(charIndex > 0) {
-                charIndex--;
-                if(characters[charIndex].classList.contains("incorrect")) {
-                    mistakes--;
-                }
-                characters[charIndex].classList.remove("correct", "incorrect");
-            }
-        } else {
-            if(characters[charIndex].innerText == typedChar) {
-                characters[charIndex].classList.add("correct");
-            } else {
-                mistakes++;
-                characters[charIndex].classList.add("incorrect");
-            }
-            charIndex++;
-        }
-        characters.forEach(span => span.classList.remove("active"));
-        characters[charIndex].classList.add("active");
+//restart the Test
+restartBtn.addEventListener("click",function(){
 
-        let wpm = Math.round(((charIndex - mistakes)  / 5) / (maxTime - timeLeft) * 60);
-        wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
-        
-        wpmTag.innerText = wpm;
-        mistakeTag.innerText = mistakes;
-        cpmTag.innerText = charIndex - mistakes;
-    } else {
-        clearInterval(timer);
-        inpField.value = "";
-    }   
-}
+  wordsSubmitted = 0;
+  wordsCorrect = 0;
+  flag=0;
 
-function initTimer() {
-    if(timeLeft > 0) {
-        timeLeft--;
-        timeTag.innerText = timeLeft;
-        let wpm = Math.round(((charIndex - mistakes)  / 5) / (maxTime - timeLeft) * 60);
-        wpmTag.innerText = wpm;
-    } else {
-        clearInterval(timer);
+  time.classList.remove("current");
+  cw.classList.remove("current");
+  time.innerText = timer;
+  timeName.innerText = "Time";
+  cw.innerText = wordsCorrect;
+  cwName.innerText = "CW";
+  inputItem.disabled = false;
+  inputItem.value = '';
+  inputItem.focus();
+
+  displayTest(difficulty);
+  clearInterval(seconds);
+  limitVisible();
+});
+
+//start the timer countdown
+function timeStart(){
+  limitInvisible();
+  seconds = setInterval(function() {
+    time.innerText--;
+    if (time.innerText == "-1") {
+        timeOver();
+        clearInterval(seconds);
     }
+  }, 1000);
 }
 
-function resetGame() {
-    loadParagraph();
-    clearInterval(timer);
-    timeLeft = maxTime;
-    charIndex = mistakes = isTyping = 0;
-    inpField.value = "";
-    timeTag.innerText = timeLeft;
-    wpmTag.innerText = 0;
-    mistakeTag.innerText = 0;
-    cpmTag.innerText = 0;
+//diable textarea and wait for restart
+function timeOver(){
+  inputItem.disabled = true;
+  restartBtn.focus();
+
+  displayScore();
 }
 
-loadParagraph();
-inpField.addEventListener("input", initTyping);
-tryAgainBtn.addEventListener("click", resetGame);
-  </script>
+//set Limit visibility
+function limitVisible(){
+  thirty.style.visibility = 'visible';
+  sixty.style.visibility = 'visible';
+  beg.style.visibility = 'visible';
+  pro.style.visibility = 'visible';
+}
+function limitInvisible(){
+  thirty.style.visibility = 'hidden';
+  sixty.style.visibility = 'hidden';
+  beg.style.visibility = 'hidden';
+  pro.style.visibility = 'hidden';
+}
+
+//display the score
+function displayScore(){
+  let percentageAcc = 0;
+  if(wordsSubmitted!==0){
+    percentageAcc = Math.floor((wordsCorrect/wordsSubmitted)*100);
+  }
+
+  time.classList.add("current");
+  cw.classList.add("current");
+
+  time.innerText = percentageAcc+"%";
+  timeName.innerText = "PA";
+
+  cw.innerText = factor*wordsCorrect;
+  cwName.innerText = "WPM";
+}
+
+//check if the user is entering correcrt word
+function currentWord(){
+  const wordEntered = inputItem.value;
+  const currentID = "word "+wordNo;
+  const currentSpan = document.getElementById(currentID);
+  const curSpanWord = currentSpan.innerText;
+
+  if(wordEntered == curSpanWord.substring(0,wordEntered.length)){
+    colorSpan(currentID, 2);
+  }
+  else{
+    colorSpan(currentID, 3);
+  }
+
+}
+//checks word entered
+function checkWord(){
+  const wordEntered = inputItem.value;
+  inputItem.value='';
+
+  const wordID = "word "+wordNo;
+  const checkSpan = document.getElementById(wordID);
+  wordNo++;
+  wordsSubmitted++;
+
+  if(checkSpan.innerText === wordEntered){
+    colorSpan(wordID, 1);
+    wordsCorrect++;
+    cw.innerText=wordsCorrect;
+  }
+  else{
+    colorSpan(wordID, 3);
+  }
+
+  if(wordNo>40){
+
+    displayTest(difficulty);
+  }
+  else{
+    const nextID = "word "+wordNo;
+    colorSpan(nextID, 2);
+  }
+}
+
+//color the words
+function colorSpan(id, color){
+  const span = document.getElementById(id);
+  if(color === 1 ){
+    span.classList.remove('wrong');
+    span.classList.remove('current');
+    span.classList.add('correct');
+  }
+  else if(color ===2){
+    span.classList.remove('correct');
+    span.classList.remove('wrong');
+    span.classList.add('current');
+  }
+  else{
+    span.classList.remove('correct');
+    span.classList.remove('current');
+    span.classList.add('wrong');
+  }
+}
+
+//display the random words on screen
+function displayTest(diff){
+  wordNo = 1;
+  testItem.innerHTML = '';
+
+  let newTest = randomWords(diff);
+  newTest.forEach(function(word, i){
+    let wordSpan = document.createElement('span');
+    wordSpan.innerText = word;
+    wordSpan.setAttribute("id", "word " + (i+1));
+    testItem.appendChild(wordSpan);
+  });
+
+  const nextID = "word "+wordNo;
+  colorSpan(nextID, 2);
+}
+
+//Generate an array of random 50 words
+function randomWords(diff){
+
+  var topWords = ["ability", "able", "about", "above", "accept", "according", "account", "across", "action", "activity", "actually",  "address", "administration", "admit", "adult", "affect", "after", "again", "against",  "agency", "agent", "ago", "agree", "agreement", "ahead",  "allow", "almost", "alone", "along", "already", "also", "although", "always", "American", "among", "amount", "analysis", "and", "animal", "another", "answer",  "anyone", "anything", "appear", "apply", "approach", "area", "argue",  "around", "arrive", "article", "artist",  "assume", "attack", "attention", "attorney", "audience", "author", "authority", "available", "avoid", "away", "baby", "back",   "ball", "bank",  "beat", "beautiful", "because", "become",  "before", "begin", "behavior", "behind", "believe", "benefit", "best", "better", "between", "beyond",  "bill", "billion",  "black", "blood", "blue", "board", "body", "book", "born", "both", "break", "bring", "brother", "budget", "build", "building", "business", "call", "camera", "campaign",  "cancer", "candidate", "capital", "card", "care", "career", "carry", "case", "catch", "cause", "cell", "center", "central", "century", "certain", "certainly", "chair", "challenge", "chance", "change", "character", "charge", "check", "child", "choice", "choose", "church", "citizen", "city", "civil", "claim", "class", "clear", "clearly", "close", "coach", "cold", "collection", "college", "color", "come", "commercial", "common", "community", "company", "compare", "computer", "concern", "condition", "conference", "congress", "consider", "consumer", "contain", "continue", "control", "cost", "could", "country", "couple", "course", "court", "cover", "create", "crime", "cultural", "culture", "cup", "current", "customer",  "dark", "data", "daughter",  "dead", "deal", "death", "debate", "decade", "decide", "decision", "deep", "defense", "degree", "Democrat", "democratic", "describe", "design", "despite", "detail", "determine", "develop", "development",  "difference", "different", "difficult", "dinner", "direction", "director", "discover", "discuss", "discussion", "disease", "doctor",  "door", "down", "draw", "dream", "drive", "drop", "drug", "during", "each", "early", "east", "easy",  "economic", "economy", "edge", "education", "effect", "effort", "eight", "either", "election", "else", "employee",  "energy", "enjoy", "enough", "enter", "entire", "environment", "environmental", "especially", "establish", "even", "evening", "event", "ever", "every", "everybody", "everyone", "everything", "evidence", "exactly", "example", "executive", "exist", "expect", "experience", "expert", "explain", "eye", "face", "fact", "factor", "fail", "fall", "family", "far", "fast", "father", "fear", "federal", "feel", "feeling",  "field", "fight", "figure", "fill", "film", "final", "finally", "financial", "find", "fine", "finger", "finish", "fire", "firm", "first", "fish", "five", "floor", "fly", "focus", "follow", "food", "foot",  "force", "foreign", "forget", "form", "former", "forward", "four", "free", "friend", "from", "front", "full", "fund", "future", "game", "garden",  "general", "generation",  "girl", "give", "glass", "goal", "good", "government", "great", "green", "ground", "group", "grow", "growth", "guess", "guy", "hair", "half", "hand", "hang", "happen", "happy", "hard", "have",  "head", "health", "hear", "heart", "heat", "heavy", "help", "here", "herself", "high", "him", "himself", "his", "history",  "hold", "home", "hope", "hospital", "hot", "hotel", "hour", "house", "how", "however", "huge", "human", "hundred", "husband", "I", "idea", "identify", "if", "image", "imagine", "impact", "important", "improve",  "include", "including", "increase", "indeed", "indicate", "individual", "industry", "information", "inside", "instead", "institution", "interest", "interesting", "international", "interview", "into", "investment", "involve", "issue",  "item", "it's", "itself", "join", "just", "keep",  "kill", "kind", "kitchen", "know", "knowledge", "land", "language", "large", "last", "late", "later", "laugh", "law", "lawyer", "lead", "leader", "learn", "least", "leave", "left",  "legal", "less",  "letter", "level",  "life", "light", "like", "likely", "line", "list", "listen", "little", "live", "local", "long", "look", "lose", "loss", "love", "machine", "magazine", "main", "maintain", "major", "majority", "make", "man", "manage", "management", "manager", "many", "market", "marriage", "material", "matter", "maybe",  "mean", "measure", "media", "medical", "meet", "meeting", "member", "memory", "mention", "message", "method", "middle", "might", "military", "million", "mind", "minute", "miss", "mission", "model", "modern", "moment", "money", "month", "more", "morning", "most", "mother", "mouth", "move", "movement", "movie", "Mr", "Mrs", "much", "music", "must", "my", "myself", "name", "nation", "national", "natural", "nature", "near", "nearly", "necessary", "need", "network", "never",  "news", "newspaper", "next", "nice", "night",  "none",  "north",  "note", "nothing", "notice",  "number", "occur", "off", "offer", "office", "officer", "official", "often", "once", "only", "onto", "open", "operation", "opportunity", "option",  "order", "organization", "other", "others",  "outside", "over", "own", "owner", "page", "pain", "painting", "paper", "parent", "part", "participant", "particular", "particularly", "partner", "party", "pass", "past", "patient", "pattern", "peace", "people", "perform", "performance", "perhaps", "period", "person", "personal", "phone", "physical", "pick", "picture", "piece", "place", "plan", "plant", "play", "player", "PM", "point", "police", "policy", "political", "politics", "poor", "popular", "population", "position", "positive", "possible", "power", "practice", "prepare", "present", "president", "pressure", "pretty", "prevent", "price", "private", "probably", "problem", "process", "produce", "product", "production", "professional", "professor", "program", "project", "property", "protect", "prove", "provide", "public", "pull", "purpose", "push",  "quality", "question", "quickly", "quite", "race", "radio", "raise", "range", "rate", "rather", "reach", "read", "ready", "real", "reality", "realize", "really", "reason", "receive", "recent", "recently", "recognize", "record", "red", "reduce", "reflect", "region", "relate", "relationship", "religious", "remain", "remember", "remove", "report", "represent", "republican", "require", "research", "resource", "respond", "response", "responsibility", "rest", "result", "return", "reveal", "rich", "right", "rise", "risk", "road", "rock", "role", "room", "rule",  "safe", "same", "save",  "scene", "school", "science", "scientist", "score", "sea", "season", "seat", "second", "section", "security", "see", "seek", "seem", "sell", "send", "senior", "sense", "series", "serious", "serve", "service", "set", "seven", "several", "sex", "sexual", "shake", "share", "she", "shoot", "short", "shot", "should", "shoulder", "show", "side", "sign", "significant", "similar", "simple", "simply", "since", "sing", "single", "sister",   "situation", "size", "skill", "skin", "small", "smile",  "social", "society", "soldier", "some", "somebody", "someone", "something", "sometimes", "song", "soon", "sort", "sound", "source", "south", "southern", "space", "speak", "special", "specific", "speech", "spend", "sport", "spring", "staff", "stage", "stand", "standard", "star", "start", "state", "statement", "station", "stay", "step", "still", "stock", "stop", "store", "story", "strategy", "street", "strong", "structure", "student", "study", "stuff", "style", "subject", "success", "successful", "such", "suddenly", "suffer", "suggest", "summer", "support", "sure", "surface", "system", "table", "take", "talk", "task", "tax", "teach", "teacher", "team", "technology", "television", "tell",  "tend", "term", "test", "than", "thank", "that",  "their", "them", "themselves", "then", "theory", "there", "these", "they", "thing", "think", "third", "this", "those", "though", "thought", "thousand", "threat", "three", "through", "throughout", "throw", "thus", "time", "today", "together", "tonight",  "total", "tough", "toward", "town", "trade", "traditional", "training", "travel", "treat", "treatment", "tree", "trial", "trip", "trouble", "true", "truth", "try", "turn", "TV",  "type", "under", "understand", "unit", "until", "usually", "value", "various", "very", "victim", "view", "violence", "visit", "voice", "vote", "wait", "walk", "wall", "want",  "watch", "water",  "weapon", "wear", "week", "weight", "well", "west", "western", "what", "whatever", "when", "where", "whether", "which", "while", "white",  "whole", "whom", "whose",  "wide", "wife", "will", "wind", "window", "wish", "with", "within", "without", "woman", "wonder", "word", "work", "worker", "world", "worry", "would", "write", "writer", "wrong", "yard", "yeah", "year", "young", "your", "yourself"];
+
+
+  var basicWords = ["a", "about", "above", "across", "act",  "add", "afraid", "after", "again", "age", "ago", "agree", "air", "all", "alone", "along", "always", "am", "amount", "an", "and", "angry", "another", "answer", "any", "anyone",  "appear", "apple", "are", "area", "arm", "army", "around", "arrive", "art", "as", "ask", "at", "aunt",  "away", "baby", "back", "bad", "bag", "ball", "bank", "base",  "bath", "be", "bean", "bear",  "bed", "beer", "before", "begin", "bell", "below", "best", "big", "bird", "birth",  "bit", "bite", "black", "bleed", "block", "blood", "blow", "blue", "board", "boat", "body", "boil", "bone", "book", "border", "born", "both",  "bowl", "box", "boy", "branch", "brave", "bread", "break", "breathe", "bridge", "bright", "bring", "brother", "brown", "brush", "build", "burn",  "bus", "busy", "but", "buy", "by", "cake", "call", "can",  "cap", "car", "card", "care", "carry", "case", "cat", "catch",  "chair", "chase", "cheap", "cheese",  "child",   "choice",  "circle", "city", "class", "clever", "clean", "clear", "climb", "clock", "cloth",  "cloud",  "close", "coffee", "coat", "coin", "cold",  "colour", "comb",  "common", "compare", "come",  "control", "cook", "cool", "copper", "corn", "corner", "correct", "cost",  "count",   "cover", "crash", "cross", "cry", "cup",  "cut", "dance",  "dark",  "day", "dead", "decide", "deep", "deer",  "desk",   "die",  "dirty",  "dish", "do", "dog", "door",  "down", "draw", "dream", "dress", "drink", "drive", "drop", "dry", "duck", "dust", "duty", "each", "ear", "early", "earn", "earth", "east", "easy", "eat", "effect", "egg", "eight",   "else", "empty", "end", "enemy", "enjoy",  "enter", "equal",  "even",  "event", "ever", "every",  "exact",   "except",  "expect",  "explain",  "eye", "face", "fact", "fail", "fall", "false", "family", "famous", "far", "farm",  "fast", "fat", "fault", "fear", "feed", "feel", "fever", "few", "fight", "fill", "film", "find", "fine",  "fire", "first", "fish", "fit", "five", "fix", "flag", "flat", "float", "floor", "flour",  "fly", "fold", "food", "fool", "foot", "for", "force",  "forest", "forget",  "fork", "form", "fox", "four", "free", "freeze", "fresh", "friend",  "from", "front", "fruit", "full", "fun", "funny",   "future", "game",  "gate","get", "gift", "give", "glad", "glass", "go", "goat", "god", "gold", "good",   "grass", "grave", "great", "green", "gray",  "group", "grow", "gun", "hair", "half", "hall",  "hand",  "happy", "hard", "hat", "hate", "have", "he", "head",  "hear", "heavy", "heart",  "hello", "help", "hen", "her", "here", "hers", "hide", "high", "hill", "him", "his", "hit", "hobby", "hold", "hole",  "home", "hope", "horse",  "hot", "hotel", "house", "how",  "hour", "hurry",  "hurt", "I", "ice", "idea", "if",  "in",   "into", "invent", "iron",  "is", "island", "it", "its", "jelly", "job", "join", "juice", "jump", "just", "keep", "key", "kill", "kind", "king",  "knee", "knife", "knock", "know", "lady", "lamp", "land", "large", "last", "late", "laugh", "lazy", "lead", "leaf", "learn", "leave", "leg", "left", "lend", "length", "less", "lesson", "let", "letter", "lie", "life", "light", "like", "lion", "lip", "list",  "live", "lock", "lonely", "long", "look", "lose", "lot", "love", "low", "lower", "luck",  "main", "make", "male", "man", "many", "map", "mark", "may", "me", "meal", "mean", "meat",  "meet",  "milk", "mind",  "miss",  "mix", "model",   "money",  "month", "moon", "more",  "most",  "mouth", "move", "much", "music", "must", "my", "name",  "near", "neck", "need", "needle",  "net", "never", "new", "news",  "next", "nice", "night", "nine", "no", "noble", "noise", "none", "nor", "north", "nose", "not",  "notice", "now",  "obey",  "ocean", "of", "off", "offer", "office", "often", "oil", "old", "on", "one", "only", "open",  "or", "orange", "order", "other", "our", "out",  "over", "own", "page", "pain", "paint", "pair", "pan", "paper",  "park", "part",  "party", "pass", "past", "path", "pay", "peace", "pen",   "per",  "piano", "pick",  "piece", "pig", "pin", "pink", "place", "plane", "plant",  "plate", "play", "please",  "plenty",  "point",  "polite", "pool", "poor",    "pour", "power",  "press", "pretty",  "price", "prince", "prison",  "prize",      "pull", "punish", "pupil", "push", "put", "queen",  "quick", "quiet", "radio", "rain", "rainy", "raise", "reach", "read", "ready", "real",  "red",   "rent",   "reply", "rest",  "rice", "rich", "ride", "right", "ring", "rise", "road", "rob", "rock", "room", "round", "rude", "rule", "ruler", "run", "rush", "sad", "safe", "sail", "salt", "same", "sand", "save", "say", "school",  "search", "seat", "second", "see", "seem", "sell", "send",  "serve", "seven", "sex", "shade",  "shake", "shape", "share", "sharp", "she", "sheep", "sheet",  "shine", "ship", "shirt", "shoe", "shoot", "shop", "short",   "shout", "show", "sick", "side",   "silly", "silver",  "simple", "single", "since", "sing", "sink", "sister", "sit", "six", "size", "skill", "skin", "skirt", "sky", "sleep", "slip", "slow", "small", "smell", "smile", "smoke", "snow", "so", "soap", "sock", "soft", "some",  "son", "soon", "sorry", "sound", "soup", "south", "space", "speak",  "speed", "spell", "spend", "spoon", "sport", "spread", "spring", "square", "stamp", "stand", "star", "start",  "stay", "steal", "steam", "step", "still",  "stone", "stop", "store", "storm", "story",  "street", "study", "stupid",  "such", "sugar",  "sun", "sunny",  "sure",  "sweet", "swim", "sword", "table", "take", "talk", "tall", "taste", "taxi", "tea", "teach", "team", "tear",   "tell", "ten", "tennis", "test", "than", "that", "the", "their", "then", "there",  "these", "thick", "thin", "thing", "think", "third", "this",  "threat", "three", "tidy", "tie", "title", "to", "today", "toe", "too", "tool", "tooth", "top", "total", "touch", "town", "train", "tram",  "tree",  "true", "trust", "twice", "try", "turn", "type", "ugly", "uncle", "under",  "unit", "until", "up", "use", "useful", "usual", "usually",  "very",  "voice", "visit", "wait", "wake", "walk", "want", "warm", "was", "wash", "waste", "watch", "water", "way", "we", "weak", "wear",  "week", "weight",  "were", "well", "west", "wet", "what", "wheel", "when", "where", "which", "while", "white", "who", "why", "wide", "wife", "wild", "will", "win", "wind",  "wine",  "wire", "wise", "wish", "with",  "woman",  "word", "work", "world", "worry", "yard", "yell",  "yet", "you", "young", "your", "zero", "zoo"];
   
+  if(diff==1){
+    wordArray = basicWords;
+  }
+  else{
+    wordArray =topWords;
+  }
 
-
+  var selectedWords = [];
+  for(var i=0;i<40;i++){
+    var randomNumber = Math.floor(Math.random()*wordArray.length);
+    selectedWords.push(wordArray[randomNumber]+" ");
+  }
+  return selectedWords;
+}
+</script>
+  
+  
 <script>
 //скрол
         function scrollToNextBlock() {

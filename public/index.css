@@ -7,6 +7,10 @@
 
 
 
+.all{
+    display: block;
+}
+
 .container {
     width: 100%;
     height: 100vh; 
@@ -19,11 +23,6 @@
 }
 
 
-.container2 {
-    height: 500px;
-    width: 100%;
-    background-color: #fff;
-}
 
 
 
@@ -788,12 +787,197 @@
     498px 1947px #fff, 617px 880px #fff, 240px 403px #fff;
 }
 
+.notWork{
+    display: none;
+}
+
+.wrapper2 {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
 
 @keyframes animStar {
     from {
         transform: translateY(0px);
     }
     to {
-        transform: translateY(-2000px);
+        transform: translateY(-1000px);
     }
 }
+
+
+@media  (max-width: 940px) {
+    .all{
+        display: none;
+    }
+    .notWork{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .notWork p{
+        color: #000;
+        font-size: 5em;
+    }
+}
+
+    .info-block {
+        width: 100%;
+        height: 150px;
+        text-align: center;
+        box-shadow: 0px 10px 50px -5px rgba(0, 0, 0, 0.75);
+        text-align: left;
+        background-color: #084f8e;
+        z-index: 2;
+    }
+
+    .info-block ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .info-block li {
+        color: #fff;
+        font-size: 20px;
+        margin-top: 50px;
+        margin-right:  100px ;
+        margin-left: 5px;
+    }
+
+    .img-container3{
+        margin-top: 20px;
+        width: 100px;
+        height: 100px;
+    }
+    .img-container3 img {
+        width: 100px;
+        height: 100px;
+    }
+
+.hand1 {
+    position: absolute;
+    z-index: 1;
+    margin-left: 14%;
+}
+.hand2 {
+    position: absolute;
+    z-index: 1;
+    margin-left: 42.5%;
+}
+
+.hand1 img {
+    height: 750px;
+}
+.hand2 img {
+    height: 750px;
+}
+.container3{
+    padding-top: 50px;
+    margin-bottom: 20px;
+    height: 800px;
+    align-items: center;
+}
+
+.text-block {
+    position: absolute;
+    margin-top: 12%;
+    left: 21%;
+    height: 600px;
+    font-family: 'Montserrat', sans-serif;
+    width: 500px;
+    color: #000;
+    text-align: left;
+    z-index: 2;
+
+}
+.text-block p{
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+}
+
+.image-block {
+    position: absolute;
+    width: 1300px;
+    left: 20%;
+   
+}
+
+.btn-lesson {
+    margin-top: 45px;
+    width: 40%;
+    height: 45px;
+    background: #0b75d2 ;
+    border: 2px solid #084f8e;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+}
+
+
+.top-typing-text {
+    color: slategray;
+    letter-spacing: 2px;
+    font-size: 12px;
+
+}
+
+
+
+
+
+
+
+
+
+/*-------------- footer ---------------*/
+.footer {
+    background-color: #333; /* Колір фону футера */
+    color: #fff; /* Колір тексту */
+    padding: 40px 0; /* Відступи зверху та знизу */
+}
+
+.footer-content {
+    max-width: 1200px; /* Максимальна ширина контенту футера */
+    margin: 0 auto; /* Центрування контенту */
+    display: flex; /* Використання flexbox для розташування елементів */
+    justify-content: space-between; /* Рівномірний розподіл простору між елементами */
+    align-items: center; /* Вирівнювання по центру по вертикалі */
+}
+
+.footer-content p {
+    margin: 0; /* Відміна зовнішніх відступів тексту */
+}
+
+.footer-links {
+    list-style: none; /* Відміна маркера списку */
+    padding: 0; /* Відміна внутрішніх відступів списку */
+}
+
+.footer-links li {
+    display: inline; /* Відображення по горизонталі */
+    margin-right: 20px; /* Відступи між посиланнями */
+}
+
+.footer-links li:last-child {
+    margin-right: 0; /* Відміна відступу для останнього елемента */
+}
+
+.footer-links li a {
+    color: #fff; /* Колір тексту посилань */
+    text-decoration: none; /* Відміна підкреслення */
+}
+
+
+
+
+
+
+ 

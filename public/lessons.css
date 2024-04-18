@@ -346,3 +346,27 @@ to {background: var(--color-grey)}
 .blink {
 animation: 600ms blink ease-in-out
 }
+
+
+h2 {
+  
+  padding: 10px;
+  border-radius: 0.4rem;
+  background: var(--color-violet);
+}
+
+
+
+tr.best-result {
+  border: 2px solid rgba(255, 0, 0, 0.459); /* Червона рамка */
+  border-radius: 5px; /* Завкруглення кутів */
+}
+
+.best-result:after {
+  content: "Best"; /* Доданий текст в кінці рядка */
+  font-size: 15px; /* Розмір тексту */
+  color: rgba(247, 247, 247, 0.76); /* Колір тексту */
+  background-color: #3815a1;
+  border-radius: 5px;
+  padding: 5px;
+}
