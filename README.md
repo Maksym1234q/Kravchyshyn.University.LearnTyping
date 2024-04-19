@@ -13,9 +13,11 @@ List of Application Features:
 • Leaderboards: Compete with other users and view rankings based on typing performance.
 • Social Sharing: Share typing achievements and progress on social media platforms.
 • Typing Games: Fun and interactive typing games to make learning enjoyable.
-&#10004;
+<style>
+.green-checkbox {
     color: green;
 }
 </style>
 
 - <span class="green-checkbox">&#10004;</span> Завдання 1
+- <span class="green-checkbox">&#9744;</span> Завдання 2
