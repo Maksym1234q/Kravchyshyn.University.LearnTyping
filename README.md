@@ -14,3 +14,8 @@ List of Application Features:
 • Social Sharing: Share typing achievements and progress on social media platforms.
 • Typing Games: Fun and interactive typing games to make learning enjoyable.
 &#10004;
+    color: green;
+}
+</style>
+
+- <span class="green-checkbox">&#10004;</span> Завдання 1
