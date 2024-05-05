@@ -23,18 +23,10 @@
 }
 
 
-
-
-
-/* @keyframes moveStars {
+@keyframes moveStars {
     from { background-position: 0 0; }
     to { background-position: -1000px 0; } 
-}  */
-
-
-
-  
-
+} 
 
 .cursor {
     display: inline-block;
@@ -225,11 +217,6 @@
 .hidden {
     display: none;
 }
-
-
-
-
-
 
 #stars {
     width: 1px;
@@ -787,9 +774,6 @@
     498px 1947px #fff, 617px 880px #fff, 240px 403px #fff;
 }
 
-.notWork{
-    display: none;
-}
 
 .wrapper2 {
     padding-left: 0 !important;
@@ -807,56 +791,60 @@
 }
 
 
-@media  (max-width: 940px) {
-    .all{
-        display: none;
+
+.info-block {
+    position: relative;
+    width: 100%;
+    min-height: 150px; /* Використовуємо min-height, щоб забезпечити мінімальну висоту */
+    text-align: center;
+    box-shadow: 0px 10px 50px -5px rgba(0, 0, 0, 0.75);
+    text-align: left;
+    background-color: #084f8e;
+    z-index: 8;
+}
+
+.info-block ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.info-block li {
+    color: #fff;
+    font-size: 20px;
+    margin-top: 40px; /* Зменшуємо відступи */
+    margin-right:  20px; /* Зменшуємо відступи */
+    margin-left: 20px; /* Зменшуємо відступи */
+}
+
+.img-container3 {
+    margin-top: 20px;
+    width: 10%; /* Використовуємо відсоткове значення для ширини */
+    max-width: 100px; /* Максимальна ширина */
+    height: auto; /* Автоматична висота */
+}
+
+.img-container3 img {
+    width: 100%; /* Заповнюємо контейнер */
+    height: auto; /* Автоматична висота */
+}
+
+/* Медіа-запит для зміни стилів на різних розмірах екрану */
+@media screen and (max-width: 768px) {
+    .info-block li {
+        font-size: 13px; /* Зменшуємо розмір шрифту */
+        margin-top: 40px; /* Зменшуємо відступи */
+        margin-right:  10px; /* Зменшуємо відступи */
+        margin-left: 10px; /* Зменшуємо відступи */
     }
-    .notWork{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    .notWork p{
-        color: #000;
-        font-size: 5em;
+
+    .img-container3 {
+        width: 20%; /* Зменшуємо ширину контейнера для зображення */
+        max-width: 70px; /* Зменшуємо максимальну ширину */
     }
 }
 
-    .info-block {
-        width: 100%;
-        height: 150px;
-        text-align: center;
-        box-shadow: 0px 10px 50px -5px rgba(0, 0, 0, 0.75);
-        text-align: left;
-        background-color: #084f8e;
-        z-index: 2;
-    }
-
-    .info-block ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .info-block li {
-        color: #fff;
-        font-size: 20px;
-        margin-top: 50px;
-        margin-right:  100px ;
-        margin-left: 5px;
-    }
-
-    .img-container3{
-        margin-top: 20px;
-        width: 100px;
-        height: 100px;
-    }
-    .img-container3 img {
-        width: 100px;
-        height: 100px;
-    }
 
 .hand1 {
     position: absolute;
@@ -880,19 +868,19 @@
     margin-bottom: 20px;
     height: 800px;
     align-items: center;
+
 }
 
 .text-block {
     position: absolute;
     margin-top: 12%;
-    left: 21%;
+    margin-left: 15%;
     height: 600px;
     font-family: 'Montserrat', sans-serif;
     width: 500px;
     color: #000;
     text-align: left;
     z-index: 2;
-
 }
 .text-block p{
     font-family: 'Montserrat', sans-serif;
@@ -901,10 +889,64 @@
 
 .image-block {
     position: absolute;
-    width: 1300px;
-    left: 20%;
-   
+    width: 100%; /* Заповнює ширину батьківського контейнера */
+    max-width: 1300px; /* Максимальна ширина картинки */
+    left: 50%;
+    transform: translateX(-50%);
 }
+
+@media screen and (max-width: 1600px) {
+    .image-block {
+        width: 90%; /* Зменшує ширину картинки при зменшенні екрану до 768px */
+    }
+    .hand1 {
+        display: none;
+    }
+    .hand2 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1550px) {
+    .text-block {
+       margin-left: 8%; 
+    }
+}
+
+@media screen and (max-width: 1340px) {
+    
+    .container3{
+        height: 700px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .image-block{
+        display: none;
+    }
+    .container3{
+        height: 400px;
+        
+        
+    }
+    .text-block {
+        margin-top: 4%;
+        width: 85%;
+        text-align: center;
+     }
+}
+
+@media screen and (max-width: 1800px) {
+    .hand1{
+        display: none;
+    }
+    .hand2{
+        display: none;
+    }
+    
+}
+
+
 
 .btn-lesson {
     margin-top: 45px;
@@ -922,6 +964,14 @@
 }
 
 
+.btn-lesson:hover, .btn-lesson:active {
+    background: rgb(255, 255, 255) !important;
+    box-shadow: 0 0 10px #b298fb;
+    color: black !important;
+    border: 2px solid  #b298fb;
+
+}
+
 .top-typing-text {
     color: slategray;
     letter-spacing: 2px;
@@ -929,9 +979,24 @@
 
 }
 
+.share {
+    padding: 3px 7px ;
+    background-color: #0b75d2;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #0b75d2;
+    margin-bottom: 15px;
 
+}
 
+.share:hover, .share:active{
+    background: rgb(255, 255, 255) !important;
+    box-shadow: 0 0 10px #b298fb;
+    color: black !important;
+    border: 2px solid  #b298fb;
 
+}
 
 
 
@@ -941,7 +1006,9 @@
 .footer {
     background-color: #333; /* Колір фону футера */
     color: #fff; /* Колір тексту */
-    padding: 40px 0; /* Відступи зверху та знизу */
+    padding: 40px 20px; /* Відступи зверху та знизу */
+    margin-bottom: 0;
+
 }
 
 .footer-content {

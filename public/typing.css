@@ -10,7 +10,7 @@
 
 
   .container2 {
-    height: 1150px; /* Задаємо висоту 500px */
+    height: 1000px; /* Задаємо висоту 500px */
     display: flex;
     padding: 0 10px;
     align-items: center;
@@ -26,8 +26,6 @@
 
  
 
-
-
    
 .keyboard-base {
   width: 1085px;
@@ -41,6 +39,16 @@
   grid-gap: 5px;
   margin-top: 11%;
   margin-left: 50%;
+}
+
+@media screen and (max-width: 1300px) {
+    .keyboard-base{
+      display: none;
+    }
+    .container2 {
+      height: 550px; 
+    }
+
 }
 
 
@@ -130,6 +138,8 @@ a{
   text-decoration: none;
   
 }
+
+
 .correct{
   color: #29bb89;
 }
@@ -166,6 +176,7 @@ a{
   font-size: 15px;
 }
 
+
 .stats{
   margin: 10px auto 10px auto;
 }
@@ -173,6 +184,9 @@ a{
 .details{
   font-size: 6rem;
 }
+
+
+
 .stat-block{
   padding: 0 30px;
   min-width: 150px;
@@ -196,10 +210,11 @@ a{
 
 .text-display{
   margin: 0 0 22px 0;
-  font-size: 21px;
+  font-size: 20px;
   text-align: center;
   min-height: 100px;
 }
+
 
 input:focus, textarea:focus, select:focus, a:focus{
   outline: 0 ;
@@ -209,9 +224,6 @@ a:hover{
   text-decoration: none;
 }
 
-.restart-button{
-  padding: 5px;
-}
 
 textarea:focus{
   background: #084f8e;
@@ -222,7 +234,7 @@ textarea:focus{
   font-size: 1.2rem;
   resize: none;
   text-align: center;
-  margin-bottom: 1px;
+  margin-bottom: 10px;
 }
 
 textarea {
@@ -234,6 +246,55 @@ textarea {
   font-size: 1.2rem;
   resize: none;
   text-align: center;
-  margin-bottom: 1px;
+  margin-bottom: 10px;
 }
 
+@media screen and (max-width: 1700px) {
+    textarea{
+      margin-bottom: 50px;
+    }
+    textarea:focus{
+      margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 1800px) {
+  .container2{
+    height: 950px;
+  }
+  
+}
+
+@media screen and (max-width: 1300px) {
+  .container2 {
+    height: 550px; 
+  }
+
+}
+
+@media(max-width: 600px){
+  #heading{
+    font-size: 30px;
+  }
+  .text-display{
+    margin: 0 0 12px 0;
+    font-size: 14px;
+  }
+  .yellow{
+    font-size: 14px;
+  }
+  .details{
+    font-size: 4rem;
+  }
+  textarea:focus{
+    height: 25px;
+    width: 100px; 
+  }
+  textarea {
+    height: 25px;
+    width: 100px;
+  }
+  .container2{
+    height: 400px;
+  }
+}

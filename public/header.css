@@ -5,8 +5,6 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-
-
 header{
     display: flex;
     justify-content: space-between;
@@ -17,6 +15,12 @@ header{
     left: 0;
     width: 100%;
     z-index: 100;
+}
+
+@media screen and (max-width: 1000px) {
+    header{
+        display: none;
+    }
 }
 
  header h1 {
@@ -55,16 +59,15 @@ header nav a.a1 {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
+
 header nav:hover > a:not(:hover) {
     background: none;
     color: #fff;
 }
 
-
 header nav button {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background: transparent;
-
     text-decoration: none;
     font-size: 20px;
     font-weight: 600;
@@ -73,15 +76,14 @@ header nav button {
     border: none;
     transition: 0.3s;
     color: white;
-  
-    /* color: #084f8e;
+    /*color: #084f8e;
     font-size: 20px;
     padding: 8px;
     background-color: rgb(255, 255, 255);
     border: 1px solid #ffffff;
     border-radius: 99px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s; */
+    transition: background-color 0.3s, color 0.3s;*/
 }
 
 header nav button:hover,
@@ -99,22 +101,25 @@ nav button:focus {
     padding: 8px 16px;
     border-radius: 99px;
 }
+
+.a2{
+    cursor: pointer;
+}
+
 .register-link {
-    text-decoration: none;
+    text-decoration: underline;
     font-size: 20px;
-    padding: 8px 0px;
+    padding: 8px 16px;
     border-radius: 99px;
     transition: 0.3s;
     color: white;
 }
 
 .register-link:hover{
-    color: #b298fb !important;
+    background: rgb(255, 255, 255) !important;
+    box-shadow: 0 0 10px #b298fb;
+    color: black !important;
 }
-
-
-
-
 
 .dropdown {
     position: relative;
@@ -157,8 +162,6 @@ nav button:focus {
     background-color: transparent;
 }
 
-
-
 .game-details {
     width: 400px;
     height: 400px;
@@ -172,7 +175,6 @@ nav button:focus {
     transition: 0.3s;
 }
 
-
 .game-details img {
     border-radius: 10px;
     width: 383px;
@@ -182,8 +184,6 @@ nav button:focus {
 .game-details h2, p{
    color: #fff;
    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-   
 }
 
 /* Показуємо випливаюче вікно при наведенні на посилання */

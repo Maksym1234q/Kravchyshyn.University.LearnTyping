@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+
     <link rel="stylesheet" href="/index.css">
     <link rel="stylesheet" href="/typing.css">
     <link rel="stylesheet" href="/header.css">
 
-
+    
     <title>Home Page</title>
 </head>
 <body>
@@ -41,7 +43,7 @@
         </div>
     </div>
 </div>
-        <a id="logoutButton" class="a2" onclick="logout()">Logout</a>
+        {{!-- <a id="logoutButton" class="a2" onclick="logout()">Logout</a> --}}
         <a id="registerButton" class="register">Register</a>
     </nav>
 </header>
@@ -103,8 +105,12 @@
       </div>
       <div class="text-display" id="textDisplay">
       </div>
+      
+    <button class="share" id="share-facebook">Facebook</button>
+    <button class="share" id="share-twitter">Twitter</button>
+
       <div class="input-area center">
-        <textarea rows="1" class="text-input" id="textInput" autofocus autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+        <textarea rows="1" class="text-input" id="textInput"  autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
       </div>
       <div  class="restart-button center">
         <a id="restartBtn" class = "current" href="#">
@@ -112,11 +118,17 @@
         </a>
       </div>
     </div>
+
+
+
+
+
+
     <div class="hand1">
-        <img src="/img/left-home-row-5.webp" alt="">
+        <img src="/img/left-home-row-5.png" alt="">
     </div>
     <div class="hand2">
-        <img src="/img/right-resting-hand.webp" alt="">
+        <img src="/img/right-resting-hand.png" alt="">
     </div>
 <div class="keyboard-base">
         <div class="key">~</div>
@@ -226,22 +238,96 @@
 
 
 
-
-
-
-
-
-    <div class="notWork">
-        <p>Device Not Support</p>
-    </div>
-
  <!-- Bootstrap script -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script>
+        (function(doc, script) {
+            var js,
+                fjs = doc.getElementsByTagName(script)[0],
+                frag = doc.createDocumentFragment(),
+                add = function(url, id) {
+                    if (doc.getElementById(id)) {return;}
+                    js = doc.createElement(script);
+                    js.src = url;
+                    id && (js.id = id);
+                    frag.appendChild(js);
+                };
+
+            add('https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=', 'facebook-jssdk');
+            add('https://platform.twitter.com/widgets.js');
+
+            fjs.parentNode.insertBefore(frag, fjs);
+        }(document, 'script'));
+    </script>
+    <script>
+        var app = app || {};
+
+
+app.facebook = {
+     share: function() {
+        // Отримання результатів тесту
+        var typingSpeed = Math.round((wordsCorrect / (30 * factor)) * 60); // Припущення: wordsCorrect, factor - змінні, які містять результати тесту
+
+        // Текст з результатами
+        var resultText = "Моя швидкість набору складає " + typingSpeed + " слів на хвилину!";
+
+        FB.ui({
+            method: 'share',
+            href: 'https://cpstest.org/blog/wp-content/uploads/2021/07/typing.com_.jpg', // Посилання на ваш вміст
+            name: 'Typing speed test result',
+            picture: 'https://cpstest.org/blog/wp-content/uploads/2021/07/typing.com_.jpg', // Посилання на зображення
+            caption: 'Результат тесту', // Заголовок для результатів
+            description: resultText // Додавання результатів до опису
+        }, function(response) {
+            console.log(response);
+        });
+    },
+    feed: function() {
+        FB.ui({
+            method: 'feed',
+            name: 'Typing speed test result',
+            link: '', // Посилання на ваш вміст
+            picture: 'https://cpstest.org/blog/wp-content/uploads/2021/07/typing.com_.jpg', // Посилання на зображення
+            caption: 'Підпис до вашого вмісту',
+            description: 'Опис вашого вмісту'
+        }, function(response) {
+            console.log(response);
+        });
+    },
+};
+
+app.twitter = {
+    share: function() {
+        var text = 'Ваш текст для Twitter'; // Текст, який буде в дописі
+        var tweetUrl = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text);
+        var popup = window.open(tweetUrl, 'popupwindow', 'scrollbars=yes,width=800,height=400');
+        popup.focus();
+    }
+};
+
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#share-facebook').on('click', function() {
+                app.facebook.share();
+            });
+
+            $('#share-twitter').on('click', function() {
+                app.twitter.share();
+            });
+        });
+    </script>
+
+
+
+
 <script>  //typing speed test js----------------
-    const testItem = document.getElementById("textDisplay");
+const testItem = document.getElementById("textDisplay");
 const inputItem = document.getElementById("textInput");
 const timeName = document.getElementById("timeName");
 const time = document.getElementById("time");
@@ -481,12 +567,18 @@ function randomWords(diff){
   }
 
   var selectedWords = [];
-  for(var i=0;i<40;i++){
+  for(var i=0;i<70;i++){
     var randomNumber = Math.floor(Math.random()*wordArray.length);
     selectedWords.push(wordArray[randomNumber]+" ");
   }
   return selectedWords;
 }
+
+
+
+
+
+
 </script>
   
   
@@ -539,4 +631,6 @@ window.onload = function() {
 }; 
 </script>
 </body>
+
+
 </html>

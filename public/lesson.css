@@ -1,18 +1,19 @@
 * {
-    padding: 0;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
-
 
 body{
   font-family: 'Montserrat', sans-serif;
-    background-image: radial-gradient(circle, #5c0067 10%, #084f8e 100%);
+  background-image: radial-gradient(circle, #5c0067 10%, #084f8e 100%);
+  /* background: url(/img/wallpapers.jpg); */
 }
 
 .container2 {
-   height: 2200px;
-    padding-top: 120px;
+
+  height: 1400px;
+  padding-top: 100px;
 }
 
 .container2 h1 {
@@ -23,20 +24,20 @@ body{
 
 .container {
     margin: 0 auto;
-    width: 1300px;
-    padding-top: 5px;
+    width: 40%;
+    padding-top: 10px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap; /* Додано для обгортання наступного ряду */
 }
 
 .lesson-card {
-    /* width: calc(33.33% - 100px);  */
-    height: 180px;
-    width: 180px;
+    height: 150px;
+    width: 150px;
     position: relative;
     perspective: 1000px;
-    margin: 20px;
+    margin: 15px;
+
 }
 
 .front, .back {
@@ -46,46 +47,54 @@ body{
   left: 0;
   top: 0;
   display: flex;
- 
   transition: 1s;
   backface-visibility: hidden;
-  border-radius: 10px;
+  border-radius: 5px;
 }
-.front {
 
-  background-color: #fff;
+.front {
+  background-color: #ffffffbc;
+  border: 2px solid rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+
+
 }
+
 .back {
   text-align: center;
-
   padding: 10px;
   justify-content: center;
   align-items: center;
   background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.993);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  border: 2px solid rgba(255, 255, 255, 0.368);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
   transform: rotateY(180deg);
 }
+
+.back img {
+  height: 50px;
+}
+
 .lesson-card:hover .front {transform: rotateY(180deg);}
 .lesson-card:hover .back {transform: rotateY(360deg);}
 
 .h2 {
   height: 20px;
-  width: 100px;
+  width: 120px;
     padding: 5px;
     color: #000000;
 }
+
 .h3 {
   height: 20px;
-  width: 190px;
-    padding: 5px;
-    color: #000000;
-    position: absolute;
-    bottom: 10px;
-    text-align: center;
+  padding: 5px;
+  color: #000000;
+  position: absolute;
+  bottom: 10px;
 
 }
+
 .h3 h3 {
   text-align: center;
 }
@@ -131,7 +140,6 @@ body{
   background-color: #5f43b2; /* Змінюємо колір фону при наведенні на кнопку */
 }
 
-
 .type-lesson{
     color: white;
     display: flex;
@@ -139,6 +147,94 @@ body{
     font-size: 30px;
     padding-left: 15%;
 }
+
+img{
+  height: 70px;
+}
+
+.line {
+  width: 60%; /* ширина лінії */
+  height: 2px; /* висота лінії */
+  background-color: rgba(255, 255, 255, 0.218); /* колір лінії */
+  background-image: repeating-linear-gradient(to right, rgba(0, 0, 0, 0.41), rgba(255, 255, 255, 0.267) 10px, transparent 10px, transparent 20px); /* Повторюваний градієнт */
+
+  margin: auto; 
+}
+
+@media screen and (max-width: 1900px) {
+  .container {
+    width: 50%;
+}
+}
+@media screen and (max-width: 1440px) {
+  .container {
+    width: 60%;
+}
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 70%;
+}
+}
+@media screen and (max-width: 1030px) {
+  .container {
+    width: 80%;
+}
+}
+@media screen and (max-width: 900px) {
+  .container {
+    width: 90%;
+}
+}
+
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 90%;
+}
+.lesson-card {
+  height: 120px;
+  width: 120px;
+}
+img{
+  height: 40px;
+}
+.back img {
+  height: 30px;
+}
+.h2 {
+  height: 10px;
+  width: 100px;
+  padding: 3px;
+  color: #000000;
+  font-size: 20px;
+}
+.h3 {
+  height: 20px;
+  padding: 3px;
+  color: #000000;
+  position: absolute;
+  bottom: 3px;
+  font-size: 15px;
+
+}
+.h3 h3 {
+  text-align: center;
+}
+.img {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 40px;
+  left:38px;
+
+}
+.lesson-card p {
+    letter-spacing: 1px;
+    color: #000000;
+}
+}
+
 
 
 

@@ -13,52 +13,61 @@
 <body>
 <div class="container1">
     <header id="header">
-        <h1 style="color: aliceblue;">TypingClub</h1>
-        <nav>
-            <a href="/" class="a1">Home</a>
-            <a href="/lesson" class="a2">Lessons</a>
-            <div class="dropdown">
-                <button class="a2">TypingGame</button>
-                <div class="dropdown-content">
-                    <a href="/game-2" class="game-link"><img src="../img/icons8-typing-50.png" alt="Game 1"> Game1</a>
-                    <div class="game-details">
-                        <img src="../img/game_2.png" alt="Game 1">
-                        <h2>Keyboard game training</h2>
-                        <p>You need to press the letter that stands out on the keyboard, this is just training...</p>
-                    </div>
-                    <a href="/game-1" class="game-link"><img src="../img/icons8-typing-50.png" alt="Game 2"> Game2</a>
-                    <div class="game-details">
-                        <img src="../img/game_1.png" alt="Game 1">
-                        <h2>Latters game boll</h2>
-                        <p>You need to click on the letter that falls from top to bottom so that the letter does not touch the bottom side...</p>
-                    </div>
-                    <a href="/game-3" class="game-link"><img src="../img/icons8-typing-50.png" alt="Game 3"> Game3</a>
-                    <div class="game-details">
-                        <img src="../img/game_3.png" alt="Game 1">
-                        <h2>Words game spped</h2>
-                        <p>You need to enter the words on the screen while the time is 60 seconds...</p>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <h1 style="color: aliceblue;">TypingClub</h1>
+    <nav>
+        <a href="/" class="a1">Home</a>
+        <a href="/lesson" class="a2">Lessons</a>
+        <div class="dropdown">
+    <button class="a2">TypingGame</button>
+    <div class="dropdown-content">
+        <a href="/game-2" class="game-link"><img src="../img/icons8-typing-50.png" alt="Game 1"> Game1</a>
+        <div class="game-details">
+            <img src="../img/game_2.png" alt="Game 1">
+            <h2>Keyboard game training</h2>
+            <p>You need to press the letter that stands out on the keyboard, this is just training...</p>
+        </div>
+        <a href="/game-1" class="game-link"><img src="../img/icons8-typing-50.png" alt="Game 2"> Game2</a>
+        <div class="game-details">
+            <img src="../img/game_1.png" alt="Game 1">
+            <h2>Latters game boll</h2>
+            <p>You need to click on the letter that falls from top to bottom so that the letter does not touch the bottom side...</p>
+        </div>
+        <a href="/game-3" class="game-link"><img src="../img/icons8-typing-50.png" alt="Game 3"> Game3</a>
+        <div class="game-details">
+            <img src="../img/game_3.png" alt="Game 1">
+            <h2>Words game spped</h2>
+            <p>You need to enter the words on the screen while the time is 60 seconds...</p>
+        </div>
+    </div>
+</div>
+       {{!-- <a id="logoutButton" class="a2" onclick="logout()">Logout</a> --}}
+        <a id="registerButton" class="register">Register</a>
+    </nav>
+</header>
 </div>
 
 <div class="container2">
+
+
+
     {{!-- <h1>Typing Lessons</h1> --}}
 
 
-    <div class="scroll-buttons">
-        <button onclick="scrollToStage(1)">Alphabet</button>
+    {{!-- <div class="scroll-buttons">
+        <button onclick="scrollToStage(1)">Home Row</button>
         
-        <button onclick="scrollToStage(2)">The Shift Key</button>
+        <button onclick="scrollToStage(2)">Top Row</button>
         
-        <button onclick="scrollToStage(3)">Numbers</button>
-    </div>
+        <button onclick="scrollToStage(3)">Bottom Row</button>
+    </div> --}}
+
+    
     {{!-- /*---------------------------------------- Lessons ----------------------------------------------*/ --}}
 
     <div class="stage" id="stage1">
-        <span class="type-lesson">Alphabet</span>
+        <span class="type-lesson">Home Row</span>
+        <div class="line"></div>
+
         <div class="container">
 
             <card class="lesson-card" onclick="window.location.href='/lesson-1'">
@@ -113,78 +122,65 @@
                 </div>
             </card>
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-5'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 5 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-5.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Learning a & ;</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
                 </div>
             </card>
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            {{!-- <card class="lesson-card" onclick="window.location.href='/lesson-6'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 6 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-6.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">First 8 keys</h3>
+                </div>
+                <div class="back">
+                    <img src="/img/icons8-start.gif" alt="ABS">
+                </div>
+            </card> --}}
+
+            <card class="lesson-card" onclick="window.location.href='/lesson-7'">
+                <div class="front">
+                    <h2 class="h2">Level 7 </h2>
+                    <div class="img">
+                        <img src="/img/les-7.png" alt="ABS">
+                    </div>
+                    <h3 class="h3">Left hand asdf</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
                 </div>
             </card>
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-8'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 8 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-7.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Right hand jkl;</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
                 </div>
             </card>
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-9'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 9 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-9.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
-                </div>
-                <div class="back">
-                    <img src="/img/icons8-start.gif" alt="ABS">
-                </div>
-            </card>
-
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
-                <div class="front">
-                    <h2 class="h2">Level - </h2>
-                    <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
-                    </div>
-                    <h3 class="h3">Learning '-'</h3>
-                </div>
-                <div class="back">
-                    <img src="/img/icons8-start.gif" alt="ABS">
-                </div>
-            </card>
-
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
-                <div class="front">
-                    <h2 class="h2">Level - </h2>
-                    <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
-                    </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Keys g & h</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
@@ -195,55 +191,56 @@
     </div>
 {{!-- ------------------------------------------------------------------------------------------------- --}}
     <div class="stage" id="stage2">
-        <span class="type-lesson">The Shift Key</span>
+        <span class="type-lesson">Top Row</span>
+        <div class="line"></div>
         <div class="container">
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-10'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 10</h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-10.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Keys r & u</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
                 </div>
             </card>
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-11'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 11</h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-11.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Keys e & i</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
                 </div>
             </card>
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-12'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 12 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-12.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Play: ruei</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
                 </div>
             </card>
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-13'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 13 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-13.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Keys w & o</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
@@ -251,78 +248,52 @@
             </card>
 
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-14'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 14 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-14.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Play:6 Keys</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
                 </div>
             </card>
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-15'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 15 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-15.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Keys q & y</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
                 </div>
             </card>
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-16'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 16 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-16.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Keys p & t</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
                 </div>
             </card>
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-17'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 17 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-17.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
-                </div>
-                <div class="back">
-                    <img src="/img/icons8-start.gif" alt="ABS">
-                </div>
-            </card>
-
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
-                <div class="front">
-                    <h2 class="h2">Level - </h2>
-                    <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
-                    </div>
-                    <h3 class="h3">Learning '-'</h3>
-                </div>
-                <div class="back">
-                    <img src="/img/icons8-start.gif" alt="ABS">
-                </div>
-            </card>
-
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
-                <div class="front">
-                    <h2 class="h2">Level - </h2>
-                    <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
-                    </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Play: Top Row</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
@@ -334,133 +305,108 @@
 {{!-- ------------------------------------------------------------------------------------------------- --}}
 
     <div class="stage" id="stage3">
-        <span class="type-lesson">Numbers</span>
+        <span class="type-lesson">Bottom Row</span>
+        <div class="line"></div>
         <div class="container">
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-18'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 18 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-18.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Keys v & m</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
                 </div>
             </card>
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-19'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 19 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-19.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Keys c & ,</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
                 </div>
             </card>
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-20'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 20 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-20.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Play: vmc,</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
                 </div>
             </card>
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-21'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 21 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-21.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Keys x & .</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
                 </div>
             </card>
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-22'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 22 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-22.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Keys z & /</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
                 </div>
             </card>
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-23'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 23 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-23.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Keys b & n</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
                 </div>
             </card>
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-24'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 24 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-24.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Play: Bottom</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
                 </div>
             </card>
 
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
+            <card class="lesson-card" onclick="window.location.href='/lesson-25'">
                 <div class="front">
-                    <h2 class="h2">Level - </h2>
+                    <h2 class="h2">Level 25 </h2>
                     <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
+                        <img src="/img/les-25.png" alt="ABS">
                     </div>
-                    <h3 class="h3">Learning '-'</h3>
-                </div>
-                <div class="back">
-                    <img src="/img/icons8-start.gif" alt="ABS">
-                </div>
-            </card>
-
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
-                <div class="front">
-                    <h2 class="h2">Level - </h2>
-                    <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
-                    </div>
-                    <h3 class="h3">Learning '-'</h3>
-                </div>
-                <div class="back">
-                    <img src="/img/icons8-start.gif" alt="ABS">
-                </div>
-            </card>
-
-            <card class="lesson-card" onclick="window.location.href='/lesson-2'">
-                <div class="front">
-                    <h2 class="h2">Level - </h2>
-                    <div class="img">
-                        <img src="/img/abc.png" alt="ABS">
-                    </div>
-                    <h3 class="h3">Learning '-'</h3>
+                    <h3 class="h3">Keys All</h3>
                 </div>
                 <div class="back">
                     <img src="/img/icons8-start.gif" alt="ABS">
@@ -480,6 +426,56 @@
     window.scrollTo({ top: y, behavior: 'smooth' });
 }
 
+</script>
+
+ 
+<script>
+//скрол
+        function scrollToNextBlock() {
+    const nextBlock = document.querySelector('.container2');
+    nextBlock.scrollIntoView({ behavior: 'smooth' });
+}
+
+
+ // Перевірка статусу реєстрації
+ function checkRegistrationStatus() {
+    const isRegistered = localStorage.getItem('isRegistered');
+    return isRegistered === 'true';
+}
+
+// Вихід з акаунта
+function logout() {
+    localStorage.removeItem('isRegistered');
+    localStorage.removeItem('authInfo'); // Видалення authInfo з localStorage
+    updateRegisterButton(); // Оновлення кнопки реєстрації на головній сторінці
+    location.href = "/"; // Перенаправлення на index.html
+}
+
+// Функція оновлення кнопки реєстрації на головній сторінці
+function updateRegisterButton() {
+    const isRegistered = localStorage.getItem('isRegistered');
+    const registerButton = document.getElementById('registerButton');
+    const logoutButton = document.getElementById('logoutButton');
+    
+    if (isRegistered === 'true') {
+        registerButton.innerHTML = '<a href="/profile" class="register-link">Profile</a>';
+        // Показуємо кнопку логауту, якщо користувач зареєстрований
+        logoutButton.classList.remove('hidden');
+    } else {
+        registerButton.innerHTML = ' <a href="/login" class="register-link">Login</a>';
+        registerButton.onclick = function() {
+            localStorage.setItem('isRegistered', 'false'); // При кліку на кнопку реєстрації, зберігаємо в localStorage, що користувач ще не зареєстрований
+            // Додаткова логіка, якщо необхідно
+        };
+        // Приховуємо кнопку логауту, якщо користувач не зареєстрований
+        logoutButton.classList.add('hidden');
+    }
+}
+
+// Оновлення кнопки реєстрації при завантаженні сторінки
+window.onload = function() {
+    updateRegisterButton();
+}; 
 </script>
 
 </body>
