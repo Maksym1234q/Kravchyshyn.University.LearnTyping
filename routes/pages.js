@@ -3,6 +3,7 @@ const express = require('express');
 
 const router = express.Router();
 const authController = require('../controllers/auth');
+const { validationResult } = require('express-validator');
 
 router.get('/', (req, res) => {
     res.render('index');
@@ -16,7 +17,6 @@ router.get('/login', (req, res) => {
 router.get('/profile', (req, res) => {
     res.render('profile'); 
 });
-
 router.get('/game-1', (req,res) => {
     res.render('game-1');
 })
@@ -104,7 +104,9 @@ router.get('/lesson-24', (req, res) => {
 router.get('/lesson-25', (req, res) => {
     res.render('lesson-25'); 
 });
-
+router.get('/contact', (req, res) => {
+    res.render('contact'); 
+});
 
 module.exports = router;
 

@@ -1,0 +1,127 @@
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center; /* Вирівнюємо по горизонталі */
+    align-items: center; /* Вирівнюємо по вертикалі */
+    height: 100vh; /* Заповнюємо висоту екрану */
+    margin: 0; /* Відміняємо зовнішній відступ */
+    background: url(/img/feed.jpg) center center; /* Центруємо фон */
+    background-size: cover; /* Масштабуємо зображення, щоб воно повністю вкривало фон */
+}
+
+
+.block {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffffff73;
+    width: 80%;
+    max-width: 600px; 
+    margin: auto; 
+    border-radius: 5px;
+    border-radius: 10px;
+    background: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.233);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 32px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 100;
+}
+
+label {
+    font-size: 19px;
+    display: block;
+    margin-bottom: 1px;
+    color: #ffffff;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 96%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ffffff21;
+    border-radius: 10px;
+    background: transparent;
+    color: #ccc;
+    font-size: 15px;
+    
+}
+
+textarea {
+    resize: vertical;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    font-size: 24px;
+    color: #ffd700;
+    margin: -10px 100px 10px 100px;
+}
+
+.stars input[type="radio"] {
+    display: none;
+}
+
+.stars label {
+    cursor: pointer;
+}
+
+.stars label:before {
+    content: '\2605'; /* пятикутник (зірка) */
+}
+
+.stars input[type="radio"]:checked ~ label:before {
+    color: #ffbb00; /* забарвлення вибраної зірки */
+}
+
+.btn{
+    text-align: center;
+}
+button {
+    
+    width: 30%;
+    height: 45px;
+    background: #6200ff5d;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+button:hover, button:active, button:focus {
+    background: rgba(210, 158, 240, 0.774);
+    box-shadow: 0 0 70px #675891;
+    color: black !important;
+}
+
+  /* Стилі для повідомлення */
+  .message-container {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.message-container p {
+    margin: 0;
+}
