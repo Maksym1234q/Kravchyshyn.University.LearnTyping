@@ -191,7 +191,7 @@
     border-bottom: 10px solid white;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     .moon {
         display: none; 
     }
@@ -920,7 +920,14 @@
     }
 }
 
+@media screen and (max-width: 1000px) {
+    .moon {
+        left: 10%;
+    }
+}
+
 @media screen and (max-width: 1200px) {
+    
     .image-block{
         display: none;
     }

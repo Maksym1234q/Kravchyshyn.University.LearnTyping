@@ -9,18 +9,14 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     height: 100px;
     padding: 0 5%;
     position: absolute;
     left: 0;
     width: 100%;
     z-index: 100;
-}
-
-@media screen and (max-width: 1000px) {
-    header{
-        display: none;
-    }
+    color: #fff;
 }
 
  header h1 {
@@ -195,3 +191,105 @@ nav button:focus {
 .game-details {
     display: none;
 }
+
+
+
+
+.bars {
+	color: #fff;
+	cursor: pointer;
+	display: none;
+	i {
+		position: relative;
+		top: 1px;
+	}
+}
+
+
+
+  
+@media screen and (max-width: 1110px){
+	.bars {
+		display: block;
+	}
+	header nav {
+		display: none;
+		position: absolute;
+		top: 75%;
+        right: 4.2%;
+		background: transparent;
+		a {
+			text-align: right;
+            display: block;
+            
+		}
+	}
+    .register-link {
+        padding-right: 15px;
+    }
+    .dropdown-content {
+        position: absolute;
+        width: 140px;
+        right: 140px;
+        top: 0;
+    }
+
+header nav a.a1 {
+    color: #ffffff;
+    font-size: 20px;
+    background-color: transparent;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+    
+}
+@media screen and (min-width: 1110px){
+	header nav {
+		display: flex !important;
+	}
+}
+
+
+.ham {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .hamRotate.active {
+    transform: rotate(45deg);
+  }
+  .hamRotate180.active {
+    transform: rotate(180deg);
+  }
+  .line {
+    fill:none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke:#ffffff;
+    stroke-width:5.5;
+    stroke-linecap:round;
+  }
+  .ham3 .top {
+    stroke-dasharray: 40 130;
+  }
+  .ham3 .middle {
+    stroke-dasharray: 40 140;
+  }
+  .ham3 .bottom {
+    stroke-dasharray: 40 205;
+  }
+  .ham3.active .top {
+    stroke-dasharray: 75 130;
+    stroke-dashoffset: -63px;
+  }
+  .ham3.active .middle {
+    stroke-dashoffset: -102px;
+  }
+  .ham3.active .bottom {
+    stroke-dasharray: 110 205;
+    stroke-dashoffset: -86px;
+  }

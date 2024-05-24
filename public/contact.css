@@ -12,12 +12,10 @@ body {
 
 .block {
     margin-top: 20px;
-    padding: 10px;
-    background-color: #ffffff73;
+    padding: 40px;
     width: 80%;
     max-width: 600px; 
     margin: auto; 
-    border-radius: 5px;
     border-radius: 10px;
     background: transparent;
     border: 2px solid rgba(0, 0, 0, 0.233);
@@ -124,4 +122,14 @@ button:hover, button:active, button:focus {
 
 .message-container p {
     margin: 0;
+}
+
+.arrow{
+    position: absolute;
+    left: 40px;
+}
+
+.arrow:hover{
+    width: 35px;
+
 }

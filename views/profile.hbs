@@ -19,16 +19,28 @@
         </div>
             
 		<ul class="side-menu top">
-			<li class="active">
-				<a href="#">
+            <li class="active">
+				<a href="/profile">
 					<i class='bx bxs-dashboard' ></i>
-					<span class="text">Dashboard</span>
+					<span class="text">Profile</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="/">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Home</span>
+				</a>
+			</li>
+            <li>
+				<a href="/lesson">
 					<i class='bx bxs-message-dots' ></i>
-					<span class="text">Message</span>
+					<span class="text">Lessons</span>
+				</a>
+			</li>
+			<li>
+				<a href="/contact">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">Feedback</span>
 				</a>
 			</li>
 		</ul>
@@ -37,7 +49,6 @@
 				<a href="#" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
 					<span onclick="logout()" class="text">Logout</span>
-                    
 				</a>
 			</li>
 		</ul>
@@ -50,11 +61,6 @@
 	<section id="content">
 		<!-- NAVBAR -->
 		<nav>
-			<i class='bx bx-menu' ></i>
-			<a href="/" class="nav-link">Home</a>
-            <i class='bx bx-menu' ></i>
-			<a href="/lesson" class="nav-link">Lessons</a>
-            
 			<form action="/profile">
 				<div class="form-input">
 					<input type="search" placeholder="Search...">
@@ -63,7 +69,6 @@
 			</form>
 			<input type="checkbox" id="switch-mode" hidden>
 			<label for="switch-mode" class="switch-mode"></label>
-		
 			<a href="#" class="profile">
 				<img id="image" src="../img/avatar.png" alt="Avatar" height="100px"/> 
 			</a>
