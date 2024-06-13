@@ -1,3 +1,4 @@
+![image](https://github.com/Maksym1234q/Kravchyshyn.University.LearnTyping/assets/115777985/a7cc23b1-c75f-40f1-a5d3-2e8ba0838b17)
 
 Перелік функцій програми:
 
